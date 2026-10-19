@@ -63,6 +63,27 @@
       }).join('') + '</div>' + tab('sites'));
   };
 
+  S.map = function () {
+    function pin(x, y, t, c) { return '<div style="position:absolute;left:' + x + 'px;top:' + y + 'px;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:' + c + ';color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.25);border:2px solid #fff">' + t + '</div>'; }
+    return phone('', status() + nav('服务地图', true) +
+      '<div class="ph-body full" style="top:88px">' +
+      '<div class="cats" style="padding:0 16px"><span class="on">全部</span><span>停车场</span><span>厕所</span><span>服务柜台</span><span>医疗点</span><span>充电桩</span></div>' +
+      '<div style="position:absolute;left:0;right:0;top:44px;bottom:0;background:#EFE7D6;overflow:hidden">' +
+      '<svg viewBox="0 0 375 680" style="position:absolute;inset:0;width:100%;height:100%">' +
+      '<g fill="none" stroke="#D9CBB0" stroke-width="1.2">' + [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { return '<path d="M-20 ' + (90 + i * 64) + ' C 90 ' + (40 + i * 64) + ', 200 ' + (150 + i * 64) + ', 400 ' + (80 + i * 64) + '"/>'; }).join('') + '</g>' +
+      '<path d="M-10 520 C 80 470, 140 560, 230 500 S 360 420, 390 450" fill="none" stroke="#9CC3C0" stroke-width="10" stroke-linecap="round" opacity=".8"/>' +
+      '<text x="250" y="470" font-size="11" fill="#5E8D8A">红河</text>' +
+      '<text x="70" y="110" font-size="12" fill="#6E6A63" font-weight="700">迤萨镇</text><text x="230" y="300" font-size="12" fill="#6E6A63" font-weight="700">宝华镇</text></svg>' +
+      pin(92, 140, 'P', '#2F7A78') + pin(130, 168, '柜', '#A8452F') + pin(70, 196, 'WC', '#6E6A63') +
+      pin(250, 330, 'P', '#2F7A78') + pin(286, 352, '柜', '#A8452F') + pin(222, 368, '+', '#D9622B') + pin(180, 230, '电', '#D9A441') +
+      '<div class="p-card" style="position:absolute;left:12px;right:12px;bottom:28px;padding:14px 16px"><b class="serif" style="font-size:16px">撒玛坝观景台停车场</b>' +
+      '<p class="muted" style="font-size:12.5px;margin-top:2px">示意 · 车位与开放时间以景区公布为准</p>' +
+      '<div style="display:flex;gap:6px;margin-top:8px"><span class="chip teal">停车场</span><span class="chip">服务柜台 50 米</span><span class="chip grey">厕所</span></div>' +
+      '<span class="btn primary block" style="margin-top:12px">用微信地图打开</span>' +
+      '<p class="muted" style="text-align:center;margin-top:6px">只标服务点，不画路线</p></div>' +
+      '</div></div>');
+  };
+
   S.site = function () {
     return phone('', status() + nav('撒玛坝梯田', true) +
       '<div class="ph-body has-bar">' +
