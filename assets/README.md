@@ -19,8 +19,19 @@ assets/
 │   ├── heritage/               非遗与民俗示意插画
 │   └── pomegranate/            石榴（民族融合模块）
 ├── motifs/                     主题字牌、梯田等高线、马帮虚线、打卡按钮光环
+├── _source/                    抠图前的色键底原图（品红或纯蓝底），用于重抠或换尺寸，不进包
 └── _preview/                   各类素材总览图（只用于查看，不进包）
 ```
+
+### 抠图方式
+
+吉祥物、金刚区图标、Logo 和石榴插画都是用**纯色键底**（品红或纯蓝）重新生成后抠的图，没有白边。眼白、气泡、卡片这类主体里的白色会保留；Logo 字内、背包提手孔这类封闭的背景区域是透明的。需要重抠时：
+
+```bash
+python3 tools/chroma_key.py assets/_source/tuotuo-01-stand.jpg assets/mascot/tuotuo-01-stand.png 1024
+```
+
+脚本依赖 `numpy`、`scipy`、`Pillow`。底色从图片四边自动取样。
 
 ## 格式约定
 
@@ -58,7 +69,7 @@ assets/
 | `mascot/tuotuo-04-walk` | 侧面行走 | 加载中、「下一站怎么走」 |
 | `mascot/tuotuo-05-cheer` | 跳起庆祝 | 打卡成功、石榴满、领礼成功 |
 | `mascot/tuotuo-06-guide` | 举卡讲解 | 一句红河话、答题讲解卡 |
-| `mascot/tuotuo-07-avatar` | 头像（圆形） | 底部中间凸起按钮、问驮驮对话头像 |
+| `mascot/tuotuo-07-avatar` | 头像（半身，透明底，不带圆框） | 底部中间凸起按钮、问驮驮对话头像；圆形底和描边用 CSS 做 |
 
 ### 首页金刚区图标
 

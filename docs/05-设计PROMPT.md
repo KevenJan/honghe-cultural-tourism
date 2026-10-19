@@ -276,6 +276,22 @@ Only hands or tiny distant simplified figures; no faces, no costume details, no 
 
 ### D6. 抠图与导出（给出图的同学）
 
-1. 吉祥物、图标、印章、Logo 一律用**纯白底**出图，便于抠图。
-2. 抠图：先用模型抠图（如 rembg `isnet-general-use`），再把「被轮廓包住的白色」（气泡、卡片、眼白）补回不透明；印章按墨色深浅生成透明度，内部留白保持透明。
-3. 导出：透明 PNG 原图 + 2 倍 webp（边长见 `assets/README.md`）；插画导出 750w / 375w webp。
+白底出图再抠，会出现三类瑕疵：边缘一圈白边；闪光、光晕被抠成白斑；字内、提手孔等封闭的白色区域被当成主体留下。所以需要透明底的素材，一律改用**色键底**出图。
+
+1. 选底色：主体里**没有**的颜色。
+   - 吉祥物（棕、橙、红、绿）用品红。
+   - 带红色的图标、Logo、石榴用纯蓝。
+   - 带蓝绿色的背包用品红。
+2. 每条 PROMPT 末尾加上（品红就把 `#0000FF` 换成 `#FF00FF`）：
+
+```text
+Clean continuous dark outline around the whole silhouette.
+BACKGROUND: perfectly flat uniform solid pure blue #0000FF over the entire image, including inside letter counters and loops,
+no gradient, no texture, no vignette, no ground shadow, no glow, no tile, no circle frame, no white sticker border. No text.
+```
+
+3. 有闪光、星星时写明 `solid golden-yellow sparkles with dark outlines (no white glow)`，否则会生成白色光晕。
+4. 头像不要圆框，写明 `WITHOUT any circle frame or round background disc`，圆形由前端 CSS 实现。
+5. 抠图：`tools/chroma_key.py`。脚本按颜色找出和底色连通的区域及封闭的底色孔，只在轮廓两侧 3 像素内做柔边，再去掉边缘溢色。
+6. 印章仍用白底出图，按墨色深浅生成透明度，内部留白保持透明。
+7. 导出：透明 PNG 原图 + 2 倍 webp（边长见 `assets/README.md`）；插画导出 750w / 375w webp。
