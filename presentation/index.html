@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>红河同路 · 小程序产品与设计汇报</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="红河同路：云南省红河县四站实景长廊文旅小程序，产品规划与界面设计汇报。">
+<link rel="icon" href="assets/logo/logo-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/deck.css">
+<link rel="stylesheet" href="css/phone.css">
+</head>
+<body>
+<div id="progress"></div>
+<div id="viewport">
+<main id="stage">
+
+<!-- ============ 01 封面 ============ -->
+<section class="slide cover" data-title="封面">
+  <div class="bg" style="background-image:url(assets/sites/site-04-samaba-terraces@750w.webp)"></div>
+  <div class="shade"></div>
+  <div class="content">
+    <div class="brand rise"><img src="assets/logo/logo-full@400.webp" alt="红河同路标志"><span class="tag gold" style="background:rgba(217,164,65,.2);color:var(--gold)">微信小程序 · 产品与设计汇报</span></div>
+    <h1 class="rise d1" style="margin-top:46px">红河同路</h1>
+    <div class="sub rise d2">各族同路走，好物一路带</div>
+    <div class="meta rise d3">
+      <b>云南省红河县 · 四站实景长廊</b><br>
+      迤萨路口 · 马帮侨乡森林公园 · 马帮古城 · 撒玛坝梯田<br>
+      汇报版本 v2.2 · 2026 年 10 月
+    </div>
+  </div>
+  <img class="stripes rise d4" src="assets/contour-stripes.svg" alt="">
+  <img class="mascot rise d3" src="assets/mascot/tuotuo-02-wave@400.webp" alt="吉祥物驮驮">
+</section>
+
+<!-- ============ 02 目录 ============ -->
+<section class="slide" data-title="目录">
+  <div class="kicker">汇报目录</div>
+  <h2 class="title">从一条路，讲清一个县</h2>
+  <div class="toc" style="grid-template-columns:repeat(4,1fr)">
+    <a href="#3" class="rise"><div class="n">01</div><h3>为什么做</h3><p>县情、政策与产品定位</p></a>
+    <a href="#6" class="rise d1"><div class="n">02</div><h3>做什么</h3><p>四站长廊、游客路径、信息架构</p></a>
+    <a href="#9" class="rise d2"><div class="n">03</div><h3>界面与流程</h3><p>首页、站点、答题、到达打卡</p></a>
+    <a href="#12" class="rise d3"><div class="n">04</div><h3>同心石榴</h3><p>交往交流交融研学互动（可现场演示）</p></a>
+    <a href="#15" class="rise"><div class="n">05</div><h3>礼品与好物</h3><p>同路分、领礼核销、一路好物</p></a>
+    <a href="#18" class="rise d1"><div class="n">06</div><h3>边界与视觉</h3><p>内容审定、视觉系统、概念稿</p></a>
+    <a href="#21" class="rise d2"><div class="n">07</div><h3>怎么落地</h3><p>技术可行性、分期、需协调事项</p></a>
+    <a href="#24" class="rise d3" style="background:var(--deep-teal);color:#fff"><div class="n" style="color:var(--gold)">附</div><h3>交付清单</h3><p style="color:rgba(255,255,255,.7)">文档、素材包、设计稿</p></a>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>← → 翻页 · F 全屏</span></div>
+</section>
+
+<!-- ============ 03 县情与政策 ============ -->
+<section class="slide" data-title="县情与政策">
+  <div class="kicker">01 为什么做 · 县情与政策</div>
+  <h2 class="title">一个以哈尼族为主、多民族世居的侨乡</h2>
+  <div class="stats" style="margin-top:46px">
+    <div class="stat rise"><div class="num">36.09<small>万</small></div><div class="k">户籍人口</div></div>
+    <div class="stat rise d1"><div class="num">96.89<small>%</small></div><div class="k">少数民族人口占比</div></div>
+    <div class="stat rise d2"><div class="num">81.4<small>%</small></div><div class="k">哈尼族占比（29.39 万）<br>全国最大的哈尼族聚居县</div></div>
+    <div class="stat rise d3"><div class="num">5<small>个</small></div><div class="k">世居民族：汉、哈尼、彝、傣、瑶</div></div>
+    <div class="stat rise"><div class="num">1<small>万余</small></div><div class="k">华侨华人，分布在 18 个国家和地区</div></div>
+    <div class="stat rise d1"><div class="num">1.6<small>万余亩</small></div><div class="k">撒玛坝梯田 · 4300 多级<br>海拔 600–1800 米</div></div>
+    <div class="stat rise d2"><div class="num">2<small>个</small></div><div class="k">国家 4A：撒玛坝（2021.4）<br>马帮古城（2025.1）</div></div>
+    <div class="stat rise d3" style="background:var(--deep-teal);color:#fff"><div class="num" style="color:var(--gold)">2026.7.1</div><div class="k" style="color:rgba(255,255,255,.8)">《民族团结进步促进法》施行</div></div>
+  </div>
+  <div class="row" style="margin-top:34px">
+    <div class="card grow rise d2"><h3>法律导向</h3><p>增进共同性、尊重和包容差异性（第六条）；各民族优秀传统文化都是中华文化的组成部分（第十三条）；突出国家通用语言文字（第十五条）；规范展陈与讲解内容（第三十条）。</p></div>
+    <div class="card grow rise d3"><h3>地方抓手</h3><p>州里要求旅居、研学、文创深度融合，打造专属文旅 IP，健全联农带农机制；县里以马帮古城为夜间经济核心，沪滇协作和央企定点帮扶带来团购与研学客源。</p></div>
+  </div>
+  <div class="src">数据来源：红河县人民政府网站县情概况（2025 年度口径）、县文旅局公开答复；完整对照见 03 号文件《政策对照审查》。</div>
+</section>
+
+<!-- ============ 04 定位 ============ -->
+<section class="slide" data-title="产品定位">
+  <div class="kicker">01 为什么做 · 产品定位</div>
+  <h2 class="title">把人留在现场，把货带回家</h2>
+  <div class="row" style="margin-top:50px;align-items:stretch">
+    <div class="card rise" style="width:640px;background:var(--deep-teal);color:#fff">
+      <div style="font-size:22px;color:var(--gold);letter-spacing:.12em">名称</div>
+      <div class="serif" style="font-size:96px;margin-top:6px">红河同路</div>
+      <div class="serif" style="font-size:34px;color:var(--gold);margin-top:6px">各族同路走，好物一路带</div>
+      <p style="color:rgba(255,255,255,.78);font-size:23px;line-height:1.75;margin-top:28px">「同路」既是游客自己在走的这条长廊，也是各族群众在同一片土地上来往、同走一条路的日常。</p>
+      <div style="display:flex;gap:12px;margin-top:30px;flex-wrap:wrap">
+        <span class="tag" style="background:rgba(255,255,255,.12);color:#fff">积分：同路分</span>
+        <span class="tag" style="background:rgba(255,255,255,.12);color:#fff">商城：一路好物</span>
+        <span class="tag" style="background:rgba(255,255,255,.12);color:#fff">吉祥物：驮驮</span>
+      </div>
+    </div>
+    <div class="grow" style="display:grid;grid-template-columns:1fr 1fr;gap:26px">
+      <div class="card rise d1"><div class="num" style="font-size:54px">01</div><h3 style="margin-top:10px">把人留在现场</h3><p>到了地标才能打卡；站着三分钟能看完、能听完。</p></div>
+      <div class="card rise d2"><div class="num" style="font-size:54px">02</div><h3 style="margin-top:10px">讲清交往交流交融</h3><p>讲同一条路、同一沟水、同一条街、同一片田的日常，不讲口号。</p></div>
+      <div class="card rise d3"><div class="num" style="font-size:54px">03</div><h3 style="margin-top:10px">让本地货被买走</h3><p>每一站连到这一站的物产，农户、合作社、手艺人有名有姓。</p></div>
+      <div class="card rise d4"><div class="num" style="font-size:54px">04</div><h3 style="margin-top:10px">可审定、可核销</h3><p>内容可追溯到审定记录；礼品发放可追溯到柜台和店员。</p></div>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>01 为什么做</span></div>
+</section>
+
+<!-- ============ 05 用户与场景 ============ -->
+<section class="slide" data-title="用户与场景">
+  <div class="kicker">01 为什么做 · 用户与场景</div>
+  <h2 class="title">六类人，各取所需</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px">
+    <div class="card rise"><span class="tag">一期主用户</span><h3 style="margin-top:14px">自驾 / 周末游客</h3><p>停留半天到两天，认真走一到两站。要的是：别耽误行程、好拍、带点东西回去。</p></div>
+    <div class="card rise d1"><span class="tag teal">森林公园</span><h3 style="margin-top:14px">旅居 / 房车客</h3><p>停留更久，营地有冰箱和储物空间。要的是：耐放的山货、到营地自提、一键再买一次。</p></div>
+    <div class="card rise d2"><span class="tag gold">供给方</span><h3 style="margin-top:14px">农户、合作社、手艺人</h3><p>不一定常看手机。要的是：订单说得清——谁买的、在哪看到的、什么时候发。</p></div>
+    <div class="card rise"><span class="tag teal">现场</span><h3 style="margin-top:14px">柜台店员</h3><p>在访客中心、文创店、观景台。要的是：扫一下就知道能不能发、发哪一档，不出错。</p></div>
+    <div class="card rise d1"><span class="tag">审定方</span><h3 style="margin-top:14px">民宗、文旅、文化馆、文物</h3><p>依法规范讲解内容。要的是：不出错、可追溯、能一键下线。</p></div>
+    <div class="card rise d2"><span class="tag grey">二期</span><h3 style="margin-top:14px">研学与团队</h3><p>州内学校研学、央企职工疗休养与党建研学。要的是：统一组织、看得到完成情况。</p></div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>01 为什么做</span></div>
+</section>
+
+<!-- ============ 06 四站长廊 ============ -->
+<section class="slide" data-title="四站长廊">
+  <div class="kicker">02 做什么 · 四站长廊</div>
+  <h2 class="title">四站可顺可逆，走一站也有收获</h2>
+  <p class="lead">四站没有编号、没有先后锁。每站同样五步：到达打卡 → 3 分钟内容 → 3 道题 → 记下这一站 → 这站好物。</p>
+  <div class="sites">
+    <div class="trail"></div>
+    <div class="site-card rise"><div class="img" style="background-image:url(assets/sites/site-01-yisa-gateway@750w.webp)"><span class="tag">同一条路</span></div><div class="body"><h3>迤萨路口</h3><div class="slogan">同住一个县，同走一条路</div><p>高速出口后的访客停车场与游客中心。县情、五个世居民族，是整条长廊的入口和目录。</p></div></div>
+    <div class="site-card rise d1"><div class="img" style="background-image:url(assets/sites/site-02-forest-park@750w.webp)"><span class="tag teal">同一沟水</span></div><div class="body"><h3>马帮侨乡森林公园</h3><div class="slogan" style="color:var(--paddy-teal)">大家共用一沟水</div><p>森林—村寨—梯田—水系。防火重点区域，到达页常驻防火提示；旅居营地自提。</p></div></div>
+    <div class="site-card rise d2"><div class="img" style="background-image:url(assets/sites/site-03-mabang-oldtown@750w.webp)"><span class="tag gold">同一条街</span></div><div class="body"><h3>马帮古城</h3><div class="slogan" style="color:#9A6B12">出门的人和等的人</div><p>迤萨东门街，国家级文保、「江外建筑大观园」。讲马帮与侨乡；望江亭建成前只讲故事。</p></div></div>
+    <div class="site-card rise d3"><div class="img" style="background-image:url(assets/sites/site-04-samaba-terraces@750w.webp)"><span class="tag">同一片田</span></div><div class="body"><h3>撒玛坝梯田</h3><div class="slogan">同一片梯田，同一张长桌</div><p>宝华镇，世界文化遗产组成部分。灌水季 11 月—次年 4 月；多声部、乐作、开秧门、长街宴。</p></div></div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>02 做什么</span></div>
+</section>
+
+<!-- ============ 07 一位游客的一天 ============ -->
+<section class="slide" data-title="游客路径">
+  <div class="kicker">02 做什么 · 一位游客的一天</div>
+  <h2 class="title">周六，杭州来的一家三口</h2>
+  <div class="timeline">
+    <div class="step rise"><h4>到达迤萨路口</h4><p>停稳车，副驾选「我是乘客」，点「我到了」。小程序只取这一次位置。</p></div>
+    <div class="step rise d1"><h4>看一看、听一听</h4><p>四张卡片、一段 2 分 40 秒的音频，孩子在车边听完；山里没信号也能放。</p></div>
+    <div class="step rise d2"><h4>答一答</h4><p>三道题。第二题答错，先看讲解，再点「我记住了 +3」，最后得 23 分。</p></div>
+    <div class="step rise d3"><h4>记下这一站</h4><p>盖上印章，称号「红河来客」，柜台就能领第一档；也可以再走一站领更好的。</p></div>
+    <div class="step rise"><h4>认识好物</h4><p>梯田红米加进心愿单——入口站只认识、不收钱。</p></div>
+    <div class="step rise d1"><h4>下午到撒玛坝</h4><p>观景台再打一次卡，石榴里撒玛坝这一瓣亮了，认识哈尼族、彝族两颗籽。</p></div>
+    <div class="step rise d2"><h4>领礼</h4><p>出示领礼码，店员核对证件原件后发放第二档「同路礼」，手机上立刻变成「已领取」。</p></div>
+    <div class="step rise d3"><h4>买走本地货</h4><p>红米选「寄回家」，合作社收到订单：「买家在撒玛坝看完梯田一站后下单」。</p></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:24px;margin-top:30px"><img src="assets/mascot/tuotuo-04-walk@400.webp" style="width:120px" alt=""><div style="flex:1;border-top:4px dashed var(--gold)"></div><p class="note" style="font-size:24px;color:var(--stone)">这条路径就是一期要跑通的主线，所有页面都为它服务。</p></div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>02 做什么</span></div>
+</section>
+
+<!-- ============ 08 信息架构 ============ -->
+<section class="slide" data-title="信息架构">
+  <div class="kicker">02 做什么 · 信息架构</div>
+  <h2 class="title">五个标签，中间是会回答问题的小马</h2>
+  <div class="row" style="margin-top:34px;gap:60px">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:auto auto;gap:18px;flex:1;align-content:start">
+      <div class="card rise" style="padding:26px"><h3>首页</h3><ul><li>八格入口</li><li>防火公告置顶</li><li>今日开放</li><li>四站长廊</li><li>这季在红河</li><li>为您推荐</li></ul></div>
+      <div class="card rise d1" style="padding:26px"><h3>四站</h3><ul><li>四站大卡</li><li>服务地图</li><li>站点页：导览 / 听一听 / 答一答 / 来源</li><li>到达打卡</li></ul></div>
+      <div class="card rise d2" style="padding:26px;background:var(--deep-teal);color:#fff"><h3>问驮驮</h3><ul style="color:rgba(255,255,255,.8)"><li style="color:inherit">一期只检索审定问答</li><li style="color:inherit">答案下方标来源</li><li style="color:inherit">库里没有的，请问柜台</li></ul></div>
+      <div class="card rise d3" style="padding:26px"><h3>好物</h3><ul><li>按站看 / 按品类</li><li>来源档案</li><li>心愿单</li><li>寄回家 / 柜台自提 / 营地自提</li></ul></div>
+      <div class="card rise d4" style="padding:26px"><h3>我的</h3><ul><li>同路卡</li><li>同路册（足迹）</li><li>礼品与领礼码</li><li>常用游客（证件登记）</li><li>离线包 · 现场礼仪</li><li>店员工作台（仅店员）</li></ul></div>
+      <div class="card rise d2" style="grid-column:1/6;display:flex;align-items:center;gap:28px;padding:24px 32px">
+        <img src="assets/grid/grid-03-ethnic-fusion@192.webp" style="width:84px" alt="">
+        <div><h3 style="margin:0">同心石榴 · 交往交流交融研学</h3><p>从首页第三格、打卡成功页、站点页「答一答」、我的 → 同路卡，都能一步进入。</p></div>
+      </div>
+    </div>
+    <div class="rise d1">
+      <div class="pw" style="--s:.84" data-screen="home"></div>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>02 做什么</span></div>
+</section>
+
+<!-- ============ 09 界面 1 ============ -->
+<section class="slide" data-title="界面：首页与站点">
+  <div class="kicker">03 界面与流程 · HTML 重绘稿</div>
+  <h2 class="title">先看到四站，再走进一站</h2>
+  <div class="phones" style="margin-top:34px">
+    <div class="rise"><div class="pw" style="--s:.84" data-screen="home"></div><div class="phone-cap"><b>01</b>首页</div></div>
+    <div class="rise d1"><div class="pw" style="--s:.84" data-screen="sites"></div><div class="phone-cap"><b>02</b>四站</div></div>
+    <div class="rise d2"><div class="pw" style="--s:.84" data-screen="site"></div><div class="phone-cap"><b>03</b>站点页 · 撒玛坝</div></div>
+    <div class="points grow rise d3" style="padding-top:20px">
+      <div class="point"><i>1</i><div><h4>首页不放广告</h4><p>轮播只放季节、县里正式活动和开放提醒；防火公告置顶，不能关闭。</p></div></div>
+      <div class="point"><i>2</i><div><h4>未登录不显示分数</h4><p>顶栏显示「登录记分」，登录后才显示同路分。</p></div></div>
+      <div class="point"><i>3</i><div><h4>停车写人真正站的地方</h4><p>每张站卡写明停车场，不出现匝道、路肩，也不画导航线。</p></div></div>
+      <div class="point"><i>4</i><div><h4>内容标明已审定</h4><p>站点页一行写清时长、分数和「内容已审定」，来源页签可追溯。</p></div></div>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>03 界面与流程</span></div>
+</section>
+
+<!-- ============ 10 界面 2 ============ -->
+<section class="slide" data-title="界面：答题与我的">
+  <div class="kicker">03 界面与流程 · HTML 重绘稿</div>
+  <h2 class="title">答错不劝退，领礼一步到</h2>
+  <div class="phones" style="margin-top:34px">
+    <div class="rise"><div class="pw" style="--s:.84" data-screen="quiz"></div><div class="phone-cap"><b>04</b>答一答</div></div>
+    <div class="rise d1"><div class="pw" style="--s:.84" data-screen="result"></div><div class="phone-cap"><b>05</b>记下这一站</div></div>
+    <div class="rise d2"><div class="pw" style="--s:.84" data-screen="me"></div><div class="phone-cap"><b>06</b>我的 · 同路卡</div></div>
+    <div class="points grow rise d3" style="padding-top:20px">
+      <div class="point"><i>1</i><div><h4>答对 +10，答错先讲解再 +3</h4><p>无倒计时、无排行榜；讲解必须引自已审定的内容卡。</p></div></div>
+      <div class="point"><i>2</i><div><h4>三个明确出口</h4><p>去领礼 / 看这站好物 / 下一站怎么走（只给距离和停车点，不导航）。</p></div></div>
+      <div class="point"><i>3</i><div><h4>同路卡回答一个问题</h4><p>「我现在能领什么」：称号、同路分、四站印章、可领档位，一点就出领礼码。</p></div></div>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>03 界面与流程</span></div>
+</section>
+
+<!-- ============ 11 到达打卡 ============ -->
+<section class="slide" data-title="到达打卡">
+  <div class="kicker">03 界面与流程 · 到达打卡</div>
+  <h2 class="title">先安全，再隐私，最后才是好玩</h2>
+  <div class="phones" style="margin-top:30px;gap:40px">
+    <div class="rise"><div class="pw" style="--s:.8" data-screen="checkin"></div><div class="phone-cap"><b>12</b>打卡页</div></div>
+    <div class="rise d1"><div class="pw" style="--s:.8" data-screen="locating"></div><div class="phone-cap"><b>13</b>确认位置</div></div>
+    <div class="rise d2"><div class="pw" style="--s:.8" data-screen="success"></div><div class="phone-cap"><b>14</b>打卡成功</div></div>
+    <div class="rise d3"><div class="pw" style="--s:.8" data-screen="fail"></div><div class="phone-cap"><b>15</b>没打上时</div></div>
+  </div>
+  <div class="row rise d4" style="margin-top:20px;gap:20px">
+    <span class="tag teal">必须先选「我已停稳 / 我是乘客」</span>
+    <span class="tag teal">只在点击时取一次位置</span>
+    <span class="tag orange">车速 &gt; 3 米/秒提示「请停稳」</span>
+    <span class="tag gold">信号弱可扫现场桩码</span>
+    <span class="tag grey">不出现「失败」二字</span>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>03 界面与流程</span></div>
+</section>
+
+<!-- ============ 12 同心石榴：模型 ============ -->
+<section class="slide" data-title="同心石榴：模型">
+  <div class="kicker">04 同心石榴 · 交往交流交融研学</div>
+  <h2 class="title">一颗石榴，四瓣是四站</h2>
+  <div class="row" style="margin-top:30px;gap:70px;align-items:center">
+    <div class="rise" style="width:640px;flex:none">
+      <div class="pg-mount" data-lit="yisa,samaba" data-done="yisa-hani" data-labels="1" style="width:640px"></div>
+    </div>
+    <div class="grow col">
+      <div class="points rise d1">
+        <div class="point"><i>瓣</i><div><h4>四瓣 = 四站</h4><p>到了一站、打了卡，这一瓣就由米色变成宝石红。没打卡的瓣也能看，只是不能答题记分。</p></div></div>
+        <div class="point"><i>籽</i><div><h4>每瓣五颗命名籽 = 世居五族</h4><p>汉族、哈尼族、彝族、傣族、瑶族，<b class="hl">一样大、一样颜色</b>，不按人口排，不给民族配色。</p></div></div>
+        <div class="point"><i>小</i><div><h4>小籽 = 生活在红河的其他各族群众</h4><p>住在这里的人不止五个民族，小籽跟着瓣一起亮，不可点。</p></div></div>
+        <div class="point"><i>满</i><div><h4>四瓣全亮 = 长廊同心人</h4><p>称号边框换成一圈石榴纹；同路册证明「到过」，石榴证明「认识了谁」。</p></div></div>
+      </div>
+      <div class="card rise d2" style="padding:24px 30px">
+        <div style="display:flex;gap:34px;font-size:22px;align-items:center;flex-wrap:wrap">
+          <span style="display:flex;align-items:center;gap:10px"><svg width="26" height="30"><ellipse cx="13" cy="15" rx="11" ry="13" fill="#E4D6C3" stroke="#D2C1AA"/></svg>未打卡</span>
+          <span style="display:flex;align-items:center;gap:10px"><svg width="26" height="30"><ellipse cx="13" cy="15" rx="11" ry="13" fill="#B8323A"/></svg>可认识</span>
+          <span style="display:flex;align-items:center;gap:10px"><svg width="26" height="30"><ellipse cx="13" cy="15" rx="11" ry="13" fill="#B8323A" fill-opacity=".5" stroke="#fff" stroke-dasharray="3 2" stroke-width="1.5"/></svg>整理中（保留，不隐藏）</span>
+          <span style="display:flex;align-items:center;gap:10px"><svg width="26" height="30"><ellipse cx="13" cy="15" rx="10.5" ry="12.5" fill="#B8323A" stroke="#D9A441" stroke-width="2.6"/></svg>已认识：看完非遗卡 + 答过题</span>
+        </div>
+      </div>
+      <p class="note rise d3">不设单独的民族列表页，不做「五族图鉴」；每个籽详情底部固定「和谁一起」；没有审定内容的籽宁可空着，不编。</p>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>04 同心石榴</span></div>
+</section>
+
+<!-- ============ 13 同心石榴：互动演示 ============ -->
+<section class="slide" data-title="同心石榴：互动演示" id="slide-pg-demo">
+  <div class="kicker">04 同心石榴 · 现场可点的演示</div>
+  <h2 class="title">点一颗籽，看见同地共生</h2>
+  <div class="row" style="margin-top:26px;gap:60px">
+    <div class="rise"><div class="pw" style="--s:.84" data-screen="pomegranate" id="pg-phone"></div></div>
+    <div class="grow col" style="gap:20px">
+      <div class="card rise d1" style="padding:24px 30px">
+        <h3 style="font-size:28px">演示操作</h3>
+        <p>点手机里任意一颗<b class="hl">大籽</b>：它放大到中央，同瓣另外四颗围在四周，用金线相连；再点「认识这颗籽」进入详情。点下面的按钮模拟在某一站打卡。</p>
+        <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap" id="pg-controls">
+          <button class="btn sm ghost" data-site="yisa" style="height:44px;font-size:20px;padding:0 20px;border-radius:22px">迤萨路口</button>
+          <button class="btn sm ghost" data-site="forest" style="height:44px;font-size:20px;padding:0 20px;border-radius:22px">森林公园</button>
+          <button class="btn sm ghost" data-site="oldtown" style="height:44px;font-size:20px;padding:0 20px;border-radius:22px">马帮古城</button>
+          <button class="btn sm ghost" data-site="samaba" style="height:44px;font-size:20px;padding:0 20px;border-radius:22px">撒玛坝</button>
+          <button class="btn sm" data-reset style="height:44px;font-size:20px;padding:0 20px;border-radius:22px;background:var(--membrane);color:var(--terracotta)">重置</button>
+        </div>
+      </div>
+      <table class="table rise d2">
+        <thead><tr><th>站（瓣）</th><th>一期有审定内容的籽</th><th>这一瓣的共同话</th></tr></thead>
+        <tbody>
+          <tr><td>迤萨路口</td><td>五颗都是<b>索引</b>：一句县情 + 「在哪一站认识更多」</td><td>五个世居民族，住在同一个县</td></tr>
+          <tr><td>森林公园</td><td>待县文化馆、民宗局提供，暂为「整理中」</td><td>大家共用一沟水</td></tr>
+          <tr><td>马帮古城</td><td>傣族 · 傣族传统制陶（省级非遗）；彝族（尼苏）刺绣待确认</td><td>马帮把各族的货连在一条路上</td></tr>
+          <tr><td>撒玛坝</td><td>哈尼族 · 多声部（国家级）、开秧门与仰阿娜（节令活动）；彝族 · 乐作舞（国家级，哈尼族、彝族世代相传）</td><td>同一片田，一起过日子</td></tr>
+        </tbody>
+      </table>
+      <p class="note rise d3">乐作舞同时出现在哈尼族籽和彝族籽里，并在两颗籽的「和谁一起」里互相指向。乐作（跳）和多声部（唱）仍是两张卡。</p>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>04 同心石榴</span></div>
+</section>
+
+<!-- ============ 14 籽详情 ============ -->
+<section class="slide" data-title="籽详情与一句红河话">
+  <div class="kicker">04 同心石榴 · 在这一站的生活</div>
+  <h2 class="title">先讲「在这一站」，再讲这个民族</h2>
+  <div class="phones" style="margin-top:34px">
+    <div class="rise"><div class="pw" style="--s:.84" data-screen="detail" data-site="samaba" data-ethnic="hani"></div><div class="phone-cap"><b>18</b>籽详情 · 哈尼族在撒玛坝</div></div>
+    <div class="rise d1"><div class="pw" style="--s:.84" data-screen="say"></div><div class="phone-cap"><b>19</b>一句红河话（录音审定后上线）</div></div>
+    <div class="points grow rise d2" style="padding-top:10px">
+      <div class="point"><i>1</i><div><h4>页签：非遗 / 答一答 / 来源</h4><p>有审定录音后再加「一句话」页签。级别标签只有「国家级非遗」「省级非遗」，必须有出处；开秧门、仰阿娜、长街宴标「节令活动 / 生活习俗」。</p></div></div>
+      <div class="point"><i>2</i><div><h4>底部固定「和谁一起」</h4><p>如「彝族 · 乐作」「各族 · 长街宴」，点了直接跳到对应的籽或主题。</p></div></div>
+      <div class="point"><i>3</i><div><h4>普通话在前，当地说法只放录音</h4><p>听音选义，不做跟读打分；页面底部写「学一句当地话，是为了更好地交流」。</p></div></div>
+      <div class="point"><i>4</i><div><h4>不改分数上限</h4><p>每站仍是 3 道题、30 分，分到这一瓣里有内容的籽上；方言互动不计分。</p></div></div>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>04 同心石榴</span></div>
+</section>
+
+<!-- ============ 15 同路分与礼品 ============ -->
+<section class="slide" data-title="同路分与礼品">
+  <div class="kicker">05 礼品与好物 · 同路分、称号、礼品</div>
+  <h2 class="title">分数只证明「看懂了」，不能当钱用</h2>
+  <div class="row" style="margin-top:34px;gap:56px">
+    <div class="grow col">
+      <table class="table rise">
+        <thead><tr><th>档位</th><th>条件</th><th>礼品示例（本地农特、文创）</th><th>可领柜台</th></tr></thead>
+        <tbody>
+          <tr><td>一档 · 一站礼</td><td>任意 1 站</td><td>梯田红米小袋 / 本地茶小样 / 竹编书签</td><td>四站均可</td></tr>
+          <tr><td>二档 · 同路礼</td><td>2 站，≥ 40 分</td><td>红米小礼盒 / 竹编杯垫</td><td>四站均可</td></tr>
+          <tr><td>三档 · 熟客礼</td><td>3 站，≥ 70 分</td><td>傣陶小器 / 山货组合</td><td>森林公园、古城、撒玛坝</td></tr>
+          <tr><td>四档 · 同心礼</td><td>4 站，≥ 100 分</td><td>手艺人署名文创 + 梯田红米</td><td>古城、撒玛坝</td></tr>
+        </tbody>
+      </table>
+      <div class="row rise d1" style="gap:20px">
+        <div class="card grow" style="padding:24px 28px"><h3 style="font-size:28px">称号与民族无关</h3><p>红河来客 → 红河同路人 → 红河熟客 → 长廊同心人。形象是中性旅人，每站一件地方配饰，不换民族服装。</p></div>
+        <div class="card grow" style="padding:24px 28px"><h3 style="font-size:28px">每证每年一次</h3><p>取当时最高一档，领前明确提示「再走一站可领第三档」。游客不能自己点「已领取」，只能由店员核销。</p></div>
+      </div>
+      <p class="note rise d2">同路分不能提现、不能抵现金、不能在商城抵扣——商城结算页不出现任何积分字样。礼品实物和库存待县文旅局、合作社确定。</p>
+    </div>
+    <div class="rise d2"><div class="pw" style="--s:.84" data-screen="gift"></div><div class="phone-cap"><b>07</b>领礼码</div></div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>05 礼品与好物</span></div>
+</section>
+
+<!-- ============ 16 一路好物 ============ -->
+<section class="slide" data-title="一路好物">
+  <div class="kicker">05 礼品与好物 · 一路好物</div>
+  <h2 class="title">按「在哪一站遇到的」来卖</h2>
+  <div class="phones" style="margin-top:34px">
+    <div class="rise"><div class="pw" style="--s:.84" data-screen="shop"></div><div class="phone-cap"><b>08</b>一路好物</div></div>
+    <div class="rise d1"><div class="pw" style="--s:.84" data-screen="product"></div><div class="phone-cap"><b>09</b>商品详情 · 来源档案</div></div>
+    <div class="points grow rise d2" style="padding-top:10px">
+      <div class="point"><i>1</i><div><h4>每件商品都有来源档案</h4><p>生产者、村寨、采收时间、配送方式，没有来源档案不能上架。</p></div></div>
+      <div class="point"><i>2</i><div><h4>入口站只认识，不结账</h4><p>迤萨路口只能加心愿单；单一价格，不做划线价和促销倒计时。</p></div></div>
+      <div class="point"><i>3</i><div><h4>给农户的订单写清来源</h4><p>「买家在撒玛坝观景台看完梯田一站后下单」，让带货效果看得见。</p></div></div>
+      <div class="point"><i>4</i><div><h4>旅居复购</h4><p>一期先做「再买一次」和营地自提；森林公园商品不售明火类商品。</p></div></div>
+      <div class="card" style="padding:20px 26px;margin-top:6px"><p style="font-size:21px"><b>落地方式：</b>一期由一个运营主体统一开店、统一收款，按订单来源和合作社线下结算；二期开通微信支付分账。</p></div>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>05 礼品与好物</span></div>
+</section>
+
+<!-- ============ 17 店员核销 ============ -->
+<section class="slide dark" data-title="店员核销">
+  <div class="kicker">05 礼品与好物 · 店员核销</div>
+  <h2 class="title">扫一下，就知道能不能发、发哪一档</h2>
+  <div class="row" style="margin-top:34px;gap:80px">
+    <div class="rise"><div class="pw" style="--s:.8" data-screen="staff"></div><div class="phone-cap" style="color:rgba(255,255,255,.6)"><b style="color:#fff">11</b>店员工作台</div></div>
+    <div class="grow points rise d1" style="padding-top:10px">
+      <div class="point"><i>1</i><div><h4>领礼码由服务端签发</h4><p>二维码里只有 30 秒有效的一次性令牌；码下方有 6 位数字，强光下扫不出时可手输；进入页面自动调亮屏幕。</p></div></div>
+      <div class="point"><i>2</i><div><h4>证件登记去重 + 柜台核对原件</h4><p>普通小程序拿不到微信实名信息。游客在「常用游客」登记证件，服务端只存证件号的加盐哈希；店员核对证件原件的姓名和后四位。</p></div></div>
+      <div class="point"><i>3</i><div><h4>只有白名单店员能核销</h4><p>按「微信身份 + 柜台」绑定，每次进入都校验；核销记录 10 分钟内可由主管撤销。</p></div></div>
+      <div class="point"><i>4</i><div><h4>八种状态全覆盖</h4><p>可发放、已发放、今年已领、码已过期、本柜台无此档、库存不足、未登记证件、网络异常。核销必须联网，不提供离线发放。</p></div></div>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>05 礼品与好物</span></div>
+</section>
+
+<!-- ============ 18 内容边界 ============ -->
+<section class="slide" data-title="内容边界与审定">
+  <div class="kicker">06 边界与视觉 · 内容边界与审定</div>
+  <h2 class="title">没审定就不说，宁可空着也不编</h2>
+  <div class="row" style="margin-top:40px;gap:30px;align-items:stretch">
+    <div class="card rise" style="width:560px;flex:none">
+      <h3>四方审定</h3>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+        <div class="tag" style="height:56px;font-size:22px;justify-content:center">县文化馆 / 传承人：民俗表述</div>
+        <div style="text-align:center;color:var(--stone)">↓</div>
+        <div class="tag teal" style="height:56px;font-size:22px;justify-content:center">县民宗局：民族政策与用语</div>
+        <div style="text-align:center;color:var(--stone)">↓</div>
+        <div class="tag gold" style="height:56px;font-size:22px;justify-content:center">县文旅局：发布与运营</div>
+        <div style="text-align:center;color:var(--stone)">＋</div>
+        <div class="tag grey" style="height:56px;font-size:22px;justify-content:center">文物主管部门：马帮古城内容</div>
+      </div>
+      <p style="margin-top:18px;font-size:20px">每张卡底部写「内容经县民宗局、文旅局、文化馆审定 · 年月」，可一键下线。</p>
+    </div>
+    <div class="card grow rise d1">
+      <h3>红线</h3>
+      <ul>
+        <li>不出现「同化」「融为一族」；界面统一用「交往交流交融」，「民族融合」只作内部主题词</li>
+        <li>不做民族列表页、五族图鉴、民族字牌；不排高低</li>
+        <li>族语歌词、祭祀流程、族源、迁徙，审定前一律不出现</li>
+        <li>寨神林、祭祀不做成游戏，不做「趣味题」</li>
+        <li>不换整套民族服装；奕车等纹样须授权，只作配饰边纹</li>
+        <li>撒玛坝不出现樱花；望江亭建成前只讲故事</li>
+      </ul>
+    </div>
+    <div class="card grow rise d2">
+      <h3>问驮驮与用户内容</h3>
+      <ul>
+        <li>一期只检索审定问答，答案下方标来源；库里没有的，请问柜台</li>
+        <li>二期接大模型前，先完成生成式人工智能服务备案</li>
+        <li>提问和回答全部留档，敏感词直接标准拒答</li>
+        <li>评价、留言先机审再人工复核，不开放游客之间的公开评论</li>
+        <li>违规内容立即下线、保留记录、按规定报告（第三十一条）</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>06 边界与视觉</span></div>
+</section>
+
+<!-- ============ 19 视觉系统 ============ -->
+<section class="slide" data-title="视觉系统">
+  <div class="kicker">06 边界与视觉 · 视觉系统</div>
+  <h2 class="title">红土、田青、竹黄，一匹驮货的小马</h2>
+  <div class="swatches rise" style="margin-top:34px">
+    <div class="sw"><div class="c" style="background:#A8452F"></div><div class="t"><b>红土赭</b>#A8452F 主按钮</div></div>
+    <div class="sw"><div class="c" style="background:#1E4B48"></div><div class="t"><b>深田青</b>#1E4B48 主题大卡</div></div>
+    <div class="sw"><div class="c" style="background:#2F7A78"></div><div class="t"><b>水田青</b>#2F7A78 完成态</div></div>
+    <div class="sw"><div class="c" style="background:#D9A441"></div><div class="t"><b>竹黄</b>#D9A441 字牌、强调</div></div>
+    <div class="sw"><div class="c" style="background:#B8323A"></div><div class="t"><b>石榴红</b>#B8323A 石榴籽</div></div>
+    <div class="sw"><div class="c" style="background:#D9622B"></div><div class="t"><b>安全橙</b>#D9622B 只用于安全</div></div>
+  </div>
+  <div class="row" style="margin-top:28px;gap:28px">
+    <div class="card rise d1" style="flex:1.25">
+      <h3 style="font-size:28px">吉祥物「驮驮」· 七个姿态</h3>
+      <div class="mascots" style="margin-top:6px">
+        <img src="assets/mascot/tuotuo-01-stand@400.webp" alt="站立"><img src="assets/mascot/tuotuo-02-wave@400.webp" alt="挥手"><img src="assets/mascot/tuotuo-03-think@400.webp" alt="思考"><img src="assets/mascot/tuotuo-04-walk@400.webp" alt="行走"><img src="assets/mascot/tuotuo-05-cheer@400.webp" alt="庆祝"><img src="assets/mascot/tuotuo-06-guide@400.webp" alt="讲解">
+      </div>
+      <p style="font-size:19px;margin-top:6px">马帮小马，铃铛 + 竹背篓（红米、茶叶），不穿民族服装，谁都能代入。</p>
+    </div>
+    <div class="card rise d2" style="flex:1">
+      <h3 style="font-size:28px">打卡印章 · 拱形字牌</h3>
+      <div style="display:flex;gap:14px;align-items:center;margin-top:10px">
+        <img src="assets/seals/seal-01-yisa-gateway@240.webp" style="width:96px" alt=""><img src="assets/seals/seal-02-forest-park@240.webp" style="width:96px" alt=""><img src="assets/seals/seal-03-mabang-oldtown@240.webp" style="width:96px" alt=""><img src="assets/seals/seal-04-samaba-terraces@240.webp" style="width:96px" alt="">
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;margin-top:16px">
+        <img src="assets/badges/badge-lu.svg" style="width:64px" alt=""><img src="assets/badges/badge-shui.svg" style="width:64px" alt=""><img src="assets/badges/badge-tian.svg" style="width:64px" alt=""><img src="assets/badges/badge-xi.svg" style="width:64px" alt=""><img src="assets/badges/badge-ge.svg" style="width:64px" alt=""><img src="assets/badges/badge-yi.svg" style="width:64px" alt="">
+      </div>
+      <p style="font-size:19px;margin-top:10px">六个主题字：路、水、田、席、歌、艺——都是生活里的事，不用民族字。</p>
+    </div>
+  </div>
+  <div class="icons8 rise d3" style="margin-top:24px">
+    <div><img src="assets/grid/grid-01-checkin@192.webp" alt="">到达打卡</div>
+    <div><img src="assets/grid/grid-02-four-sites@192.webp" alt="">四站</div>
+    <div><img src="assets/grid/grid-03-ethnic-fusion@192.webp" alt="">同心石榴</div>
+    <div><img src="assets/grid/grid-04-ask-tuotuo@192.webp" alt="">问驮驮</div>
+    <div><img src="assets/grid/grid-05-gift@192.webp" alt="">领礼</div>
+    <div><img src="assets/grid/grid-06-local-goods@192.webp" alt="">一路好物</div>
+    <div><img src="assets/grid/grid-07-service-map@192.webp" alt="">服务地图</div>
+    <div><img src="assets/grid/grid-08-study-tour@192.webp" alt="">研学团队</div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>全部素材已拆成独立文件，见 assets/</span></div>
+</section>
+
+<!-- ============ 20 概念稿 ============ -->
+<section class="slide" data-title="概念稿">
+  <div class="kicker">06 边界与视觉 · 概念稿</div>
+  <h2 class="title">氛围参考：六张概念板</h2>
+  <p class="lead" style="font-size:24px">AI 生成的概念板用于确定风格和氛围，图中个别文字有误；准确的文字和交互以前面的 HTML 重绘稿为准。点击可放大。</p>
+  <div class="gallery">
+    <figure class="rise" data-full="assets/boards/hhtl-v2-board-01-home-sites.jpg"><img src="assets/boards/hhtl-v2-board-01-home-sites.jpg" alt="首页与四站概念板" loading="lazy"><figcaption>首页 · 四站 · 站点页<span class="tag grey">概念稿</span></figcaption></figure>
+    <figure class="rise d1" data-full="assets/boards/hhtl-v2-board-02-quiz-gift.jpg"><img src="assets/boards/hhtl-v2-board-02-quiz-gift.jpg" alt="答题与领礼概念板" loading="lazy"><figcaption>答一答 · 我的 · 领礼码<span class="tag grey">概念稿</span></figcaption></figure>
+    <figure class="rise d2" data-full="assets/boards/hhtl-v2-board-03-shop-staff.jpg"><img src="assets/boards/hhtl-v2-board-03-shop-staff.jpg" alt="好物与店员概念板" loading="lazy"><figcaption>好物 · 服务地图 · 店员<span class="tag grey">概念稿</span></figcaption></figure>
+    <figure class="rise" data-full="assets/boards/hhtl-v2-board-04-mascot-icons.jpg"><img src="assets/boards/hhtl-v2-board-04-mascot-icons.jpg" alt="吉祥物与图标概念板" loading="lazy"><figcaption>吉祥物 · 图标 · 色板<span class="tag grey">概念稿</span></figcaption></figure>
+    <figure class="rise d1" data-full="assets/boards/hhtl-v2-board-05-checkin.jpg"><img src="assets/boards/hhtl-v2-board-05-checkin.jpg" alt="到达打卡概念板" loading="lazy"><figcaption>到达打卡<span class="tag grey">概念稿</span></figcaption></figure>
+    <figure class="rise d2" data-full="assets/boards/hhtl-v2-board-06-ethnic-fusion.jpg"><img src="assets/boards/hhtl-v2-board-06-ethnic-fusion.jpg" alt="同心石榴概念板" loading="lazy"><figcaption>同心石榴（早期命名）<span class="tag grey">概念稿</span></figcaption></figure>
+  </div>
+  <div id="lightbox"><img alt=""><p>点击任意处关闭 · 概念稿仅作风格参考</p></div>
+</section>
+
+<!-- ============ 21 可行性 ============ -->
+<section class="slide" data-title="实现可行性">
+  <div class="kicker">07 怎么落地 · 实现可行性</div>
+  <h2 class="title">每一处都按微信小程序的真实能力设计</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:30px">
+    <div class="card rise" style="padding:26px"><h3 style="font-size:27px">定位与隐私</h3><p style="font-size:21px">只在点击时调用一次 <code>wx.getLocation</code>；申请接口权限、在 <code>requiredPrivateInfos</code> 中声明、写入隐私保护指引。</p></div>
+    <div class="card rise d1" style="padding:26px"><h3 style="font-size:27px">停稳判断</h3><p style="font-size:21px">部分机型 <code>speed</code> 不可信：大于 3 米/秒才拦；取不到时只依赖「已停稳 / 乘客」的选择。</p></div>
+    <div class="card rise d2" style="padding:26px"><h3 style="font-size:27px">山里没信号</h3><p style="font-size:21px">站点离线包存本地文件目录；打卡、答题标「待同步」；信号弱扫桩码。只有核销必须联网。</p></div>
+    <div class="card rise d3" style="padding:26px"><h3 style="font-size:27px">证件登记</h3><p style="font-size:21px">普通小程序拿不到证件号：游客自填，服务端只存加盐哈希去重，柜台核对原件；二期视资质接二要素核验。</p></div>
+    <div class="card rise" style="padding:26px"><h3 style="font-size:27px">石榴怎么画</h3><p style="font-size:21px">小程序不能操作 SVG 节点：按 <code>pomegranate-layout.json</code> 的坐标用 view 或 canvas 绘制，只用缩放和透明度动画。</p></div>
+    <div class="card rise d1" style="padding:26px"><h3 style="font-size:27px">包体与素材</h3><p style="font-size:21px">主包 ≤ 2MB：插画、吉祥物走 CDN（webp），四站各一个分包；自定义 tabBar，图标 PNG 81×81。</p></div>
+    <div class="card rise d2" style="padding:26px"><h3 style="font-size:27px">问驮驮</h3><p style="font-size:21px">一期是审定问答的关键词检索，不是生成式 AI，无需大模型备案；二期改写前先备案和安全评估。</p></div>
+    <div class="card rise d3" style="padding:26px"><h3 style="font-size:27px">AR 降级</h3><p style="font-size:21px">二期先做「左右滑动的四层分层图」（森林、村寨、梯田、水系），所有机型可用；真 AR 放到三期。</p></div>
+  </div>
+  <div class="row rise d4" style="margin-top:22px;gap:20px;align-items:stretch"><div class="card" style="flex:1.4;background:var(--deep-teal);color:#fff;display:flex;align-items:center;gap:26px;padding:18px 30px"><div class="num" style="font-size:80px;color:var(--gold)">28</div><p style="color:rgba(255,255,255,.85);font-size:21px">处缺陷与实现难点已修复<br>详见 07 号文件</p></div><div class="card" style="flex:1;display:flex;align-items:center;gap:20px;padding:18px 26px"><div class="num" style="font-size:72px">5</div><p>表述与合规<br><span class="note">如：改名「同心石榴」</span></p></div><div class="card" style="flex:1;display:flex;align-items:center;gap:20px;padding:18px 26px"><div class="num" style="font-size:72px">15</div><p>实现困难<br><span class="note">如：证件登记替代实名</span></p></div><div class="card" style="flex:1;display:flex;align-items:center;gap:20px;padding:18px 26px"><div class="num" style="font-size:72px">8</div><p>设计缺陷<br><span class="note">如：籽数按实际写</span></p></div></div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>07 怎么落地</span></div>
+</section>
+
+<!-- ============ 22 分期与指标 ============ -->
+<section class="slide" data-title="分期与指标">
+  <div class="kicker">07 怎么落地 · 分期规划与衡量指标</div>
+  <h2 class="title">一期跑通主线，二期做深，三期做宽</h2>
+  <div class="phases">
+    <div class="phase now rise"><h3>一期 · MVP</h3><div class="when">跑通「到达 → 看懂 → 领礼 → 买走」</div><ul>
+      <li>四站现场页（含离线音频）、答题、同路分</li>
+      <li>到达打卡（单次定位 + 桩码）、同路册</li>
+      <li>同心石榴（已审定的籽）、问驮驮检索</li>
+      <li>称号、礼品档位、领礼码、店员核销</li>
+      <li>一路好物：心愿单、寄回家 / 自提、来源档案</li>
+      <li>内容四方审定后台、评价留言审核、公众号入口</li></ul></div>
+    <div class="phase rise d1"><h3>二期</h3><div class="when">内容做深、渠道做广</div><ul>
+      <li>撒玛坝四层分层图</li>
+      <li>研学与团队模式、研学证书</li>
+      <li>官方环线支线（甲寅、宝华、乐育）</li>
+      <li>营地常备、帮扶单位团购、微信支付分账</li>
+      <li>一句红河话（录音审定后）</li>
+      <li>AI 讲解员（完成备案后）</li></ul></div>
+    <div class="phase rise d2"><h3>三期</h3><div class="when">体验做宽</div><ul>
+      <li>马帮过街动画（古城站）</li>
+      <li>真 AR 体验（可选）</li>
+      <li>英文导览（中文为主版本）</li>
+      <li>越南语、老挝语：单独审定后</li></ul></div>
+  </div>
+  <h3 class="serif rise d3" style="font-size:34px;margin-top:40px">衡量指标</h3>
+  <div class="row rise d3" style="margin-top:16px;gap:18px;flex-wrap:wrap">
+    <span class="tag teal" style="height:44px;font-size:21px">单站完成率</span>
+    <span class="tag teal" style="height:44px;font-size:21px">只走 1–2 站的领礼率</span>
+    <span class="tag teal" style="height:44px;font-size:21px">答错后继续答题比例</span>
+    <span class="tag gold" style="height:44px;font-size:21px">心愿单 → 下单转化</span>
+    <span class="tag gold" style="height:44px;font-size:21px">站点带动订单数</span>
+    <span class="tag orange" style="height:44px;font-size:21px">非访客点打卡尝试 → 趋近 0</span>
+    <span class="tag" style="height:44px;font-size:21px">内容审定覆盖率 100%</span>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>07 怎么落地</span></div>
+</section>
+
+<!-- ============ 23 需协调 ============ -->
+<section class="slide" data-title="需协调事项">
+  <div class="kicker">07 怎么落地 · 上线前需甲方协调</div>
+  <h2 class="title">九件事，决定能不能按期上线</h2>
+  <table class="table rise" style="margin-top:38px">
+    <thead><tr><th style="width:80px">#</th><th>事项</th><th>建议牵头</th><th>关系到</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>确定运营主体，完成小程序主体认证</td><td>县文旅局指定</td><td>全部</td></tr>
+      <tr><td>2</td><td>服务类目与资质：旅游服务、商家自营食品（《食品经营许可证》）</td><td>运营主体</td><td>定位接口权限、一路好物</td></tr>
+      <tr><td>3</td><td>微信支付商户号（二期开通分账）</td><td>运营主体</td><td>一路好物</td></tr>
+      <tr><td>4</td><td>四站桩位确认与桩码制作（只设在访客点，避开匝道和滑塌点）</td><td>县文旅局、各景区</td><td>到达打卡</td></tr>
+      <tr><td>5</td><td>内容四方审定：县文化馆、民宗局、文旅局、文物主管部门</td><td>各审定单位</td><td>全部内容</td></tr>
+      <tr><td>6</td><td>传承人与发音人授权（多声部、一句红河话）；奕车、尼苏纹样授权</td><td>县文化馆</td><td>籽详情、形象配饰</td></tr>
+      <tr><td>7</td><td>礼品实物、库存与柜台人员</td><td>县文旅局、合作社</td><td>领礼</td></tr>
+      <tr><td>8</td><td>合作社、手艺人入驻与来源档案</td><td>县农业农村、工信部门</td><td>一路好物</td></tr>
+      <tr><td>9</td><td>隐私保护指引与用户协议</td><td>运营主体</td><td>上线审核</td></tr>
+    </tbody>
+  </table>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>07 怎么落地</span></div>
+</section>
+
+<!-- ============ 24 结束 ============ -->
+<section class="slide end" data-title="结束">
+  <img class="mascot rise" src="assets/mascot/tuotuo-05-cheer@400.webp" alt="驮驮庆祝">
+  <h2 class="rise d1">谢谢</h2>
+  <p class="rise d2">各族同路走，好物一路带</p>
+  <div class="deliver rise d3">
+    <span>01 内容产品文档</span><span>02 UI 交互设计</span><span>03 政策对照审查</span><span>04 参考借鉴与 v2 方案</span>
+    <span>05 设计 PROMPT v3</span><span>06 打卡与同心石榴互动</span><span>07 缺陷修复与实现方案</span>
+    <span>assets/ 前端素材包</span><span>presentation/ 本汇报</span>
+  </div>
+</section>
+
+</main>
+</div>
+
+<div id="controls">
+  <button id="btn-prev" title="上一页（←）">‹</button>
+  <span id="pager">1 / 24</span>
+  <button id="btn-next" title="下一页（→）">›</button>
+  <button id="btn-full" title="全屏（F）">⤢</button>
+</div>
+<div id="help">← → / 空格 翻页 · F 全屏 · Home / End 首尾页</div>
+
+<script src="js/layout.js"></script>
+<script src="js/data.js"></script>
+<script src="js/screens.js"></script>
+<script src="js/pomegranate.js"></script>
+<script src="js/deck.js"></script>
+</body>
+</html>
