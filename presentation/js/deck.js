@@ -5,6 +5,28 @@
   var pager = document.getElementById('pager'), bar = document.getElementById('progress');
   var cur = 0;
 
+  function notesOf(s) { var a = s.querySelector('aside.notes'); return a ? a.innerHTML : ''; }
+
+  if (/[?&]mode=script\b/.test(location.search)) {
+    document.body.classList.add('script');
+    var box = document.createElement('div');
+    box.id = 'script';
+    box.innerHTML = '<h1>红河同路 · 汇报讲稿</h1><p class="hint">共 ' + slides.length + ' 页。打印本页即可得到纸质讲稿；去掉地址里的 ?mode=script 回到演示。</p>' +
+      slides.map(function (s, i) {
+        return '<section><h2><span>第 ' + (i + 1) + ' 页</span>' + s.dataset.title + '</h2>' + (notesOf(s) || '<p>（本页无讲稿）</p>') + '</section>';
+      }).join('');
+    document.body.appendChild(box);
+    return;
+  }
+
+  var notesPanel = document.createElement('div');
+  notesPanel.id = 'notes-panel';
+  document.body.appendChild(notesPanel);
+  function renderNotes() {
+    notesPanel.innerHTML = '<h6>第 ' + (cur + 1) + ' 页讲稿 · 按 N 关闭</h6>' + (notesOf(slides[cur]) || '<p>（本页无讲稿）</p>');
+  }
+  function toggleNotes() { notesPanel.classList.toggle('open'); renderNotes(); }
+
   function fit() {
     var k = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
     stage.style.transformOrigin = '50% 50%';
@@ -22,6 +44,7 @@
     document.title = slides[cur].dataset.title + ' · 红河同路汇报';
     if (!fromHash) history.replaceState(null, '', '#' + (cur + 1));
     closeLightbox();
+    if (notesPanel.classList.contains('open')) renderNotes();
   }
   function fromHash() {
     var n = parseInt((location.hash || '#1').slice(1), 10);
@@ -36,6 +59,7 @@
       case 'Home': go(0); break;
       case 'End': go(slides.length - 1); break;
       case 'f': case 'F': toggleFull(); break;
+      case 'n': case 'N': toggleNotes(); break;
       case 'Escape': closeLightbox(); break;
     }
   });
@@ -56,6 +80,7 @@
   document.getElementById('btn-prev').onclick = function () { go(cur - 1); };
   document.getElementById('btn-next').onclick = function () { go(cur + 1); };
   document.getElementById('btn-full').onclick = toggleFull;
+  document.getElementById('btn-notes').onclick = toggleNotes;
 
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) { e.preventDefault(); go(parseInt(a.getAttribute('href').slice(1), 10) - 1); });

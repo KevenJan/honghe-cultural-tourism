@@ -201,7 +201,7 @@
       (pulse
         ? '<div style="position:relative;z-index:5;text-align:center;color:#fff;font-size:15px;font-weight:600;margin-top:20px">' + ui('location', 'width:18px;display:inline;vertical-align:-3px;filter:invert(1);margin-right:6px') + '正在确认位置…</div>' +
           '<div style="position:relative;z-index:5;text-align:center;color:rgba(255,255,255,.7);font-size:12px;margin-top:4px">超过 8 秒会提示「定位信号弱」</div>'
-        : '<div class="ck-hint">只在点击时取一次位置</div><div class="ck-link">定位不准？扫现场桩码</div>') +
+        : '<div class="ck-hint">只在点击时取一次位置</div><div class="ck-link">定位不准？扫现场立牌码</div>') +
       '</div>';
   }
   S.checkin = function () { return phone('', checkinBase(false)); };
@@ -224,7 +224,7 @@
       '<div class="ph-body"><p class="muted" style="margin:4px 2px 2px">没打上时，每种情况都给出下一步</p>' +
       st(0, 'location', '还没到', '距打卡点约 2.3 公里', '先看这一站的内容') +
       st(1, 'parking', '请停稳后再打卡', '车辆行驶中不能打卡，停好车再点', '') +
-      st(0, 'scan', '定位信号弱', '可以扫现场桩码完成打卡', '扫桩码') +
+      st(0, 'scan', '定位信号弱', '可以扫现场立牌码完成打卡', '扫立牌码') +
       st(0, 'check', '今年已在这一站打过卡', '可以重看，不重复计分', '回到这一瓣') +
       '</div>');
   };
@@ -272,6 +272,33 @@
       '</div>' +
       '<div class="zoom"><div class="dim"></div><svg class="lines"></svg><div class="z-close">' + ui('close') + '</div><div class="z-panel"></div></div>' +
       '<div class="detail"></div>');
+  };
+
+  S.ask = function () {
+    return phone('', status() + nav('问驮驮', true) +
+      '<div class="ph-body has-bar">' +
+      '<div class="ask-hi"><img src="' + A + 'mascot/tuotuo-06-guide@400.webp" alt=""><div class="bub">我只回答县里审定过的问题。答不上的，会告诉你去问谁。</div></div>' +
+      '<div class="faq"><span>哪里停车</span><span>厕所在哪</span><span>礼品怎么领</span><span>灌水季是什么时候</span></div>' +
+      '<div class="me-q">撒玛坝灌水季是什么时候？</div>' +
+      '<div class="bot-a"><p>每年 11 月到次年 4 月。这段时间梯田蓄满水，早上和傍晚最好看。</p><div class="src">来源：红河县文旅局 · 已审定</div></div>' +
+      '<div class="me-q">长街宴哪天办？</div>' +
+      '<div class="bot-a no"><p>这个问题还没有审定过的说法。可以问柜台工作人员：</p><span class="btn sm teal" style="margin-top:6px;display:inline-flex">撒玛坝观景台服务点 · 拨打电话</span><div class="src">你的问题已记下，整理审定后会补上</div></div>' +
+      '</div><div class="ph-bar"><span class="ask-in">输入你想问的</span><span class="btn primary" style="flex:none">发送</span></div>');
+  };
+
+  S.merchant = function () {
+    return phone('', status() + nav('商家工作台', true) +
+      '<div class="ph-body">' +
+      '<div class="mc-head"><b>宝华镇 xx 农民专业合作社</b><span>本月 46 单 · 应结 ¥3,812 · 每月 5 日结算</span></div>' +
+      '<div class="seg" style="margin-top:12px"><span class="on">待发货 3</span><span>已发货</span><span>对账</span></div>' +
+      '<div class="ord"><div class="t"><b>梯田红米 2kg × 2</b><span class="chip">待发货</span></div>' +
+      '<div class="why">买家在撒玛坝观景台看完梯田一站后下单</div>' +
+      '<p>寄回家 · 上海市 · 王**<br>下单 10-19 15:32 · 请在 48 小时内发货</p>' +
+      '<div class="fill"><span>快递单号</span><em>点这里扫码或输入</em></div><span class="btn primary block" style="margin-top:8px">填好单号，发货</span></div>' +
+      '<div class="ord"><div class="t"><b>八角 500g × 1</b><span class="chip teal">营地自提</span></div>' +
+      '<div class="why">买家在森林公园营地下单</div>' +
+      '<p>自提点：森林公园游客中心 · 明天 10:00 前</p><span class="btn ghost block" style="margin-top:8px">已备好，通知游客来拿</span></div>' +
+      '<p class="muted" style="text-align:center;margin-top:10px">不习惯用手机的合作社，由运营人员在后台代填</p></div>');
   };
 
   window.HHScreens = { render: S, detailInner: detailInner };
