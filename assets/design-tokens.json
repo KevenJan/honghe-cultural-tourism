@@ -1,0 +1,82 @@
+{
+  "color": {
+    "terracotta": {
+      "value": "#A8452F",
+      "usage": "主按钮、品牌、选中态"
+    },
+    "deepTeal": {
+      "value": "#1E4B48",
+      "usage": "主题大卡、同路卡、店员工作台"
+    },
+    "paddyTeal": {
+      "value": "#2F7A78",
+      "usage": "答对、已完成、辅助色"
+    },
+    "bambooGold": {
+      "value": "#D9A441",
+      "usage": "字牌、积分、强调按钮"
+    },
+    "ink": {
+      "value": "#22201C",
+      "usage": "正文、店员工作台底色"
+    },
+    "stone": {
+      "value": "#6E6A63",
+      "usage": "次要文字"
+    },
+    "ricePaper": {
+      "value": "#F6F1E8",
+      "usage": "页面底色"
+    },
+    "white": {
+      "value": "#FFFDF9",
+      "usage": "卡片底色"
+    },
+    "safety": {
+      "value": "#D9622B",
+      "usage": "只用于安全与防火提示"
+    },
+    "pomegranateRuby": {
+      "value": "#B8323A",
+      "usage": "石榴籽"
+    },
+    "membrane": {
+      "value": "#F3E6D3",
+      "usage": "石榴内膜、未点亮底色"
+    }
+  },
+  "radius": {
+    "card": 16,
+    "hero": 24,
+    "button": 999,
+    "tile": 14
+  },
+  "font": {
+    "heading": "Source Han Serif SC / 思源宋体",
+    "body": "PingFang SC / 系统默认黑体",
+    "size": {
+      "h1": 26,
+      "h2": 20,
+      "h3": 17,
+      "body": 15,
+      "caption": 12
+    }
+  },
+  "shadow": {
+    "card": "0 2px 8px rgba(34,32,28,.06)"
+  },
+  "motion": {
+    "seedZoom": {
+      "duration": 320,
+      "easing": "cubic-bezier(.2,.8,.2,1)"
+    },
+    "stamp": {
+      "duration": 450,
+      "easing": "cubic-bezier(.3,1.4,.5,1)"
+    },
+    "chamberLight": {
+      "duration": 600,
+      "easing": "ease-out"
+    }
+  }
+}

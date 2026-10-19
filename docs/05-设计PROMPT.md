@@ -212,3 +212,70 @@ a signpost with a pin (到达打卡), four little mountains in a row (四站), a
 a gift box tied with red cord (领礼), a small sack of red rice (一路好物), a map with pin (服务地图), a school backpack (研学团队).
 No text, consistent lighting, isometric-free flat view.
 ```
+
+---
+
+## D. v2.1 新增：到达打卡、民族融合与独立素材 PROMPT
+
+> 金刚区第三格由「按主题看」改为「民族融合」，C3 中 `a golden arch badge (按主题看)` 换成 `a small pomegranate split open showing ruby seeds (民族融合)`。
+
+### D1. 到达打卡（四屏）
+
+```text
+[B0] Four phone screens: 12 打卡页, 13 确认位置, 14 打卡成功, 15 没打上时.
+12: top half watercolor of the site; title '撒玛坝梯田'; white card '你现在应该在：观景台停车场'; two toggle chips '我已停稳' (selected) '我是乘客';
+big round terracotta button with two soft gold rings and serif text '我到了'; small text '只在点击时取一次位置'; link '定位不准？扫现场桩码'.
+13: same page dimmed, gold pulse ring expanding around the button, small pin icon, text '正在确认位置…'.
+14: a round gold terrace-line ink stamp pressed onto a cream passport page with date; below, an open pomegranate where ONLY ONE chamber glows ruby and three chambers stay pale beige;
+the chestnut pony mascot jumping with joy; text '撒玛坝这一瓣亮了', '5 颗籽等你认识'; button '去认识这一瓣'.
+15: four state cards: '还没到 · 距打卡点约 2.3 公里', '请停稳后再打卡' (safety orange icon), '定位信号弱 · 扫桩码', '今年已在这一站打过卡'.
+```
+
+### D2. 民族融合（四屏）
+
+```text
+[B0] Four phone screens: 16 石榴籽, 17 点开一颗籽, 18 在这一站的生活, 19 一句红河话.
+16: deep teal hero '同地共生，像石榴籽一样', '五个世居民族，住在同一个县'; toggle '按石榴籽看 / 按一件事看';
+large open pomegranate with four chambers labeled 迤萨路口 / 森林公园 / 马帮古城 / 撒玛坝, only two chambers glowing ruby; chips '已点亮 2 瓣' '认识 6 颗籽'.
+17: dimmed background; one big round ruby seed in the center '哈尼族 · 在撒玛坝'; four smaller identical round ruby seeds around labeled 彝族 汉族 傣族 瑶族 joined by thin gold lines;
+only 彝族 caption '一起跳乐作', others '一起住在红河'; panel '同一片田，一起过日子', button '认识这颗籽'.
+18: header '哈尼族 · 在撒玛坝'; tabs 非遗 / 一句话 / 答一答 / 来源; card '哈尼多声部' tag '国家级非遗'; card '开秧门与仰阿娜' tag '节令活动'; row '和谁一起' chips '彝族 · 乐作' '各族 · 长街宴'.
+19: '一句红河话'; big Mandarin '欢迎来家里坐'; button '听当地说法', grey tag '传承人录音 · 审定后上线'; quiz '听一听，这句是什么意思？' with three options; pony mascot holding a blank card.
+Negative: all seeds same size and same ruby color, no star or cookie shapes, no ethnic costumes, no non-Chinese scripts; 开秧门 is NOT labeled as heritage.
+```
+
+### D3. 吉祥物单张（每个姿态一张，白底，便于抠图）
+
+```text
+Single character illustration of the mascot pony '驮驮' exactly matching the reference: chibi caravan pony, warm chestnut coat, darker brown mane,
+cream muzzle, brass horse bell on red cord, woven bamboo back basket holding a small sack of red rice and tea leaves.
+Pose: [正面站立 standing front view | 挥手 waving one front hoof | 思考 sitting, hoof on chin, empty speech bubble with three dots |
+行走 side view walking right | 庆祝 jumping with joy, small golden sparkles and tiny pomegranate seeds | 讲解 holding up a blank cream card | 头像 head-and-shoulders portrait].
+Soft watercolor fill with clean brown outline. Plain pure white background, no ground shadow, no text, no ethnic costume.
+```
+
+### D4. 打卡印章（每站一张，无字）
+
+```text
+A round traditional ink stamp seal in [颜色] on pure white background, slightly textured like a real stamp impression, double circular border with a thin dashed inner ring.
+Inside: simple line-art of [迤萨路口: signpost, viaduct and mountains | 森林公园: forest, stream, village roofs, terraces |
+马帮古城: old street house with arched windows and tiled roof, horse bell | 撒玛坝: curved terrace contour lines with two mushroom-shaped houses].
+No text, no characters, no letters. Centered, flat.
+```
+
+### D5. 非遗示意插画（只画物件和远景）
+
+```text
+Soft watercolor illustration, warm muted palette (terracotta, bamboo gold, paddy teal, cream), 4:3.
+[傣族传统制陶: hands shaping a clay pot, unglazed pots drying on bamboo mat | 刺绣: embroidery hoop with simple abstract floral stitches |
+竹编: hands weaving a bamboo basket | 开秧门: tiny distant figures transplanting seedlings on water-filled terraces |
+长街宴: very long row of tables with dishes down a stone village street | 乐作舞: distant circle of tiny figures dancing hand in hand in a Yunnan mountain village square with tiled-roof houses |
+哈尼多声部: terraces at dawn, a small distant group on a ridge, one golden sound ribbon leading and many following].
+Only hands or tiny distant simplified figures; no faces, no costume details, no text.
+```
+
+### D6. 抠图与导出（给出图的同学）
+
+1. 吉祥物、图标、印章、Logo 一律用**纯白底**出图，便于抠图。
+2. 抠图：先用模型抠图（如 rembg `isnet-general-use`），再把「被轮廓包住的白色」（气泡、卡片、眼白）补回不透明；印章按墨色深浅生成透明度，内部留白保持透明。
+3. 导出：透明 PNG 原图 + 2 倍 webp（边长见 `assets/README.md`）；插画导出 750w / 375w webp。
