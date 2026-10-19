@@ -17,7 +17,7 @@ assets/
 ├── illustrations/
 │   ├── sites/                  四站主插画（梯田、古城等）
 │   ├── heritage/               非遗与民俗示意插画
-│   └── pomegranate/            石榴（民族融合模块）
+│   └── pomegranate/            石榴（同心石榴模块）
 ├── motifs/                     主题字牌、梯田等高线、马帮虚线、打卡按钮光环
 ├── _source/                    抠图前的色键底原图（品红或纯蓝底），用于重抠或换尺寸，不进包
 └── _preview/                   各类素材总览图（只用于查看，不进包）
@@ -77,7 +77,7 @@ python3 tools/chroma_key.py assets/_source/tuotuo-01-stand.jpg assets/mascot/tuo
 |---|---|
 | `icons/grid/grid-01-checkin` | 到达打卡 |
 | `icons/grid/grid-02-four-sites` | 四站 |
-| `icons/grid/grid-03-ethnic-fusion` | 民族融合（石榴） |
+| `icons/grid/grid-03-ethnic-fusion` | 同心石榴（石榴图标；文件名保留 ethnic-fusion） |
 | `icons/grid/grid-04-ask-tuotuo` | 问驮驮 |
 | `icons/grid/grid-05-gift` | 领礼 |
 | `icons/grid/grid-06-local-goods` | 一路好物 |
@@ -88,8 +88,11 @@ python3 tools/chroma_key.py assets/_source/tuotuo-01-stand.jpg assets/mascot/tuo
 
 ### 底部标签与界面图标（SVG）
 
-- `icons/tab/`：`home` 首页、`sites` 四站、`goods` 好物、`me` 我的、`fusion` 民族融合（备用）。默认版用 `currentColor`，选中版固定为红土赭。中间凸起按钮用 `mascot/tuotuo-07-avatar`。
+- `icons/tab/`：`home` 首页、`sites` 四站、`goods` 好物、`me` 我的、`fusion` 同心石榴（备用）。默认版用 `currentColor`，选中版固定为红土赭。中间凸起按钮用 `mascot/tuotuo-07-avatar`。
 - `icons/ui/`：back、chevron-right、location、notice（公告）、play、pause、scan、qrcode、check、close、headset（服务电话）、parking、fire-ban（防火）、cart、source（来源）、language（中 / EN）。统一 24×24、线宽 1.8、`currentColor`。
+- **小程序原生 PNG**：小程序 tabBar 不支持 SVG，`<image>` 也不能给 SVG 换色。因此另导出：
+  - `icons/tab/png/`：81×81，默认灰岩、选中红土赭，每个约 2–3KB（tabBar 限制 40KB）。凸起的中间按钮需用 `custom-tab-bar` 自定义组件实现。
+  - `icons/ui/png-ink/`（墨色）、`icons/ui/png-white/`（白色）：48×48，用于深浅两种底色。
 
 ### 打卡印章
 
@@ -118,7 +121,7 @@ python3 tools/chroma_key.py assets/_source/tuotuo-01-stand.jpg assets/mascot/tuo
 | `illustrations/heritage/heritage-06-embroidery` | 刺绣（通用花样，非具体纹样） | 尼苏刺绣审定后使用 |
 | `illustrations/heritage/heritage-07-bamboo-weaving` | 竹编 | 主题「艺」、好物 |
 
-### 石榴（民族融合）
+### 石榴（同心石榴）
 
 | 文件 | 说明 |
 |---|---|
@@ -133,7 +136,7 @@ python3 tools/chroma_key.py assets/_source/tuotuo-01-stand.jpg assets/mascot/tuo
 - 瓣：`.chamber.is-locked`（未打卡，米色）/ `.chamber.is-lit`（已打卡，宝石红）
 - 籽：`.seed.is-pending`（整理中）/ `.seed.is-done`（已认识，金边）/ `.seed.is-active`（放大中）
 
-小程序 `<image>` 不能操作 SVG 内部节点。建议用 `canvas` 按 SVG 里的坐标重绘；或把每颗籽做成绝对定位的 `view`，坐标从 SVG 读取。放大动效参数见 `design-tokens.json` 的 `motion.seedZoom`。
+小程序 `<image>` 不能操作 SVG 内部节点。已把全部坐标导出为 **`illustrations/pomegranate/pomegranate-layout.json`**（viewBox 400×420，84 颗籽，其中 20 颗命名籽，每颗有 `id / site / ethnic / label / named / cx / cy / rx / ry / rotate`）。前端读这个 JSON，用绝对定位的 `view` 或 `canvas type="2d"` 绘制，状态由接口下发。放大动效参数见 `design-tokens.json` 的 `motion.seedZoom`。
 
 ### 纹样与字牌
 
