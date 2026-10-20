@@ -144,6 +144,7 @@ def prepare(md_text, page):
 def postprocess(body):
     body = re.sub(r"<table>", '<div class="tbl"><table>', body)
     body = body.replace("</table>", "</table></div>")
+    body = body.replace("<code>materials/</code>", '<a href="materials.html"><code>materials/</code></a>')
 
     def csv_link(m):
         name = m.group(2)
@@ -156,7 +157,7 @@ def postprocess(body):
 def build_page(fname, title, md_path):
     with open(md_path, encoding="utf-8") as f:
         text = prepare(f.read(), fname)
-    md = markdown.Markdown(extensions=["tables", "toc", "sane_lists", "fenced_code"],
+    md = markdown.Markdown(extensions=["tables", "toc", "sane_lists", "fenced_code", "nl2br"],
                            extension_configs={"toc": {"toc_depth": "2-3", "slugify": slugify_unicode}})
     body = postprocess(md.convert(text))
     if fname == "materials.html":
