@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>红河同路 · 游客端设计稿</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/ui.css">
+<link rel="stylesheet" href="css/ui-shop.css">
+<link rel="stylesheet" href="css/ui-site.css">
+<link rel="stylesheet" href="css/ui-me.css">
+<link rel="stylesheet" href="css/ui-reward.css">
+<link rel="stylesheet" href="css/ui-pg.css">
+<link rel="stylesheet" href="css/board.css">
+</head>
+<body class="viewer" data-view="index">
+<div class="v-bar"><b>红河同路 · 游客端设计稿</b><a href="index.html" class="on">总览</a><a href="components.html">组件规范</a></div>
+<div class="v-wrap">
+<div class="v-intro"><div><h1>游客端设计稿 v1.0</h1>
+<p>按微信小程序 375 逻辑像素宽绘制（1px = 2rpx，导出图为 750 宽 2 倍图）。页面、编号、文案与 <code>docs/09-功能交互规格/</code> 一致，冲突时以规格为准并回改设计稿。</p>
+<p>点任意画板进入单页：红色编号是标注，右侧是交互与状态说明；←/→ 键翻页。通用组件尺寸见「组件规范」。</p>
+<p>所有商品、礼品、人名、证件号、内容文字均为示意；插画、吉祥物、图标来自 <code>assets/</code>。</p></div>
+<div class="nums" id="nums"></div></div>
+<div class="v-filter"><button class="on" data-f="all">全部</button><button data-f="1">第 1 批 · 核心链路</button><button data-f="2">第 2 批 · 下单链路</button><button data-f="3">第 3 批 · 我的子页</button><button data-f="0">全局组件与状态</button></div>
+<div id="list"></div>
+</div>
+<script src="js/kit.js"></script>
+<script src="js/pages.js"></script>
+<script src="js/boards-global.js"></script>
+<script src="js/boards-core.js"></script>
+<script src="js/boards-site.js"></script>
+<script src="js/boards-pg.js"></script>
+<script src="js/boards-reward.js"></script>
+<script src="js/boards-shop.js"></script>
+<script src="js/boards-me.js"></script>
+<script src="js/viewer.js"></script>
+<script src="../presentation/js/layout.js"></script>
+<script src="../presentation/js/data.js"></script>
+<script src="../presentation/js/pomegranate.js"></script>
+</body>
+</html>

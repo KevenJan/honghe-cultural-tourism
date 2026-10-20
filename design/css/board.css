@@ -1,0 +1,68 @@
+/* 设计稿查看器（总览、单页标注）。只用于看稿，不属于小程序样式。 */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body.viewer { background: #E9E4DA; font: 14px/1.6 "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif; color: #22201C; }
+.v-bar { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 10px 16px; flex-wrap: wrap; padding: 10px 24px; background: #1E4B48; color: #fff; }
+.v-bar b { font-size: 16px; letter-spacing: .06em; margin-right: auto; }
+.v-bar a, .v-bar button { color: rgba(255,255,255,.85); text-decoration: none; font: inherit; background: none; border: 1px solid rgba(255,255,255,.25); border-radius: 16px; padding: 3px 12px; cursor: pointer; }
+.v-bar a:hover, .v-bar button:hover { background: rgba(255,255,255,.12); color: #fff; }
+.v-bar .on { background: #D9A441; color: #1E4B48; border-color: #D9A441; }
+.v-wrap { max-width: 1680px; margin: 0 auto; padding: 24px; }
+.v-intro { background: #FFFDF9; border-radius: 14px; padding: 20px 24px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+.v-intro h1 { margin: 0 0 6px; font-size: 24px; color: #1E4B48; font-family: "Noto Serif CJK SC", "Songti SC", serif; }
+.v-intro p { margin: 4px 0; color: #4A4640; }
+.v-intro .nums { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-end; }
+.v-intro .nums div b { display: block; font-size: 28px; color: #A8452F; font-family: "Noto Serif CJK SC", serif; line-height: 1.2; }
+.v-intro .nums div span { font-size: 12px; color: #6E6A63; }
+.v-filter { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 4px; }
+.v-filter button { border: 1px solid #D5CBB9; background: #FFFDF9; border-radius: 16px; padding: 4px 14px; font: inherit; cursor: pointer; }
+.v-filter button.on { background: #A8452F; border-color: #A8452F; color: #fff; }
+.v-pg { margin-top: 26px; }
+.v-pg h2 { margin: 0; font-size: 18px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.v-pg h2 .id { background: #1E4B48; color: #fff; border-radius: 6px; padding: 0 8px; font-size: 13px; }
+.v-pg h2 small { font-weight: 400; font-size: 12px; color: #6E6A63; }
+.v-pg h2 .bt { font-size: 11px; font-weight: 600; color: #8F6210; background: rgba(217,164,65,.2); border-radius: 10px; padding: 1px 8px; }
+.v-row { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 12px; align-items: flex-start; }
+.thumb { color: inherit; display: block; cursor: pointer; }
+.thumb .th { width: 187.5px; overflow: hidden; border-radius: 14px; box-shadow: 0 4px 16px rgba(34,32,28,.12); background: #F6F1E8; }
+.thumb .th > .scr { transform: scale(.5); transform-origin: 0 0; }
+.thumb .cap { font-size: 12px; margin-top: 6px; width: 187.5px; color: #4A4640; }
+.thumb .cap b { color: #1E4B48; margin-right: 4px; }
+.thumb:hover .th { box-shadow: 0 0 0 3px #D9A441, 0 4px 16px rgba(34,32,28,.12); }
+
+/* 单页 */
+.v-board { display: grid; grid-template-columns: 240px 375px minmax(320px, 1fr); gap: 28px; align-items: start; max-width: 1400px; margin: 0 auto; padding: 24px; }
+.v-nav { position: sticky; top: 64px; max-height: calc(100vh - 88px); overflow: auto; background: #FFFDF9; border-radius: 12px; padding: 12px; font-size: 12.5px; }
+.v-nav .g { font-weight: 700; color: #1E4B48; margin: 10px 0 2px; }
+.v-nav .g:first-child { margin-top: 0; }
+.v-nav a { display: block; color: #4A4640; text-decoration: none; padding: 2px 6px; border-radius: 6px; }
+.v-nav a.on { background: #A8452F; color: #fff; }
+.v-stage { position: relative; }
+.v-stage > .scr { box-shadow: 0 10px 40px rgba(34,32,28,.18); border-radius: 0; }
+.mk-layer { position: absolute; left: 0; top: 0; width: 375px; pointer-events: none; z-index: 100; }
+.mk { position: absolute; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: #E0362C; color: #fff; font: 700 11px/20px system-ui, sans-serif; text-align: center; font-style: normal; box-shadow: 0 0 0 2px #fff; }
+.mk-box { position: absolute; border: 1.5px dashed rgba(224,54,44,.75); border-radius: 4px; }
+.fold { position: absolute; left: -12px; right: -12px; border-top: 2px dashed #2F7A78; }
+.fold span { position: absolute; right: 0; top: -20px; font-size: 11px; color: #2F7A78; background: #E9E4DA; padding: 0 4px; }
+body.no-mk .mk-layer { display: none; }
+.v-notes { background: #FFFDF9; border-radius: 14px; padding: 18px 20px; position: sticky; top: 64px; }
+.v-notes h1 { margin: 0; font-size: 20px; color: #1E4B48; font-family: "Noto Serif CJK SC", "Songti SC", serif; }
+.v-notes .meta { font-size: 12px; color: #6E6A63; margin-top: 4px; }
+.v-notes .meta code { background: #F3E6D3; border-radius: 4px; padding: 0 5px; font-size: 11.5px; color: #4A4640; }
+.v-notes .states { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0 4px; }
+.v-notes .states a { font-size: 12px; text-decoration: none; color: #4A4640; border: 1px solid #E0D7C8; border-radius: 12px; padding: 1px 10px; }
+.v-notes .states a.on { background: #1E4B48; color: #fff; border-color: #1E4B48; }
+.v-notes .desc { margin-top: 12px; background: #F6F1E8; border-radius: 10px; padding: 10px 12px; font-size: 13px; color: #4A4640; }
+.v-notes ol { list-style: none; padding: 0; margin: 14px 0 0; }
+.v-notes li { display: flex; gap: 10px; padding: 7px 0; border-bottom: 1px solid #F0E9DD; font-size: 13px; }
+.v-notes li:last-child { border-bottom: 0; }
+.v-notes li i { flex: none; width: 20px; height: 20px; border-radius: 50%; background: #E0362C; color: #fff; font: 700 11px/20px system-ui; text-align: center; font-style: normal; margin-top: 1px; }
+.v-notes li i.g { background: #6E6A63; }
+.v-notes .pn { display: flex; justify-content: space-between; margin-top: 16px; gap: 8px; }
+.v-notes .pn a { font-size: 13px; color: #2F7A78; text-decoration: none; font-weight: 600; }
+body.clean { background: transparent; }
+body.clean .v-bar, body.clean .v-nav, body.clean .v-notes, body.clean .mk-layer { display: none !important; }
+body.clean .v-board { display: block; padding: 0; margin: 0; }
+body.clean .v-stage > .scr { box-shadow: none; }
+@media (max-width: 1100px) { .v-board { grid-template-columns: 375px 1fr; } .v-nav { display: none; } }
+@media (max-width: 760px) { .v-board { display: block; padding: 12px; } .v-notes { position: static; margin-top: 16px; } .v-intro { grid-template-columns: 1fr; } .v-wrap { padding: 12px; } }
