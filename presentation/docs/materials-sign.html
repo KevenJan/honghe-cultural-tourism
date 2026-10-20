@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>红河同路 · 立牌制作规范</title>
+<style>
+:root{--teal:#1E4B48;--paddy:#2F7A78;--gold:#D9A441;--ink:#22201C;--stone:#6E6A63;--paper:#F6F1E8;--white:#FFFDF9;--line:#E6DCCB;--membrane:#F3E6D3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.8 "PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--paddy)}
+.bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;padding:12px 24px;background:var(--teal);color:#fff;font-size:15px}
+.bar .brand{font-weight:700;letter-spacing:.08em;margin-right:auto}
+.bar a{color:rgba(255,255,255,.82);text-decoration:none;padding:4px 12px;border-radius:20px}
+.bar a:hover{color:#fff;background:rgba(255,255,255,.12)}
+.bar a.on{color:var(--teal);background:var(--gold)}
+.wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;max-width:1240px;margin:0 auto;padding:36px 24px 80px}
+nav.toc{position:sticky;top:76px;align-self:start;max-height:calc(100vh - 100px);overflow:auto;font-size:14px;line-height:1.6}
+nav.toc .h{font-weight:700;color:var(--stone);margin-bottom:8px}
+nav.toc ul{list-style:none;margin:0;padding:0}
+nav.toc ul ul{padding-left:14px;font-size:13px}
+nav.toc li{margin:4px 0}
+nav.toc a{color:var(--ink);text-decoration:none}
+nav.toc a:hover{color:var(--paddy)}
+article{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:44px 52px;min-width:0}
+h1,h2,h3,h4{font-family:"Noto Serif SC","Noto Serif CJK SC","Source Han Serif SC","Songti SC",serif;color:var(--teal);line-height:1.4}
+h1{font-size:34px;margin:0 0 18px}
+h2{font-size:26px;margin:48px 0 14px;padding-top:12px;border-top:1px solid var(--line)}
+h3{font-size:21px;margin:32px 0 10px}
+h4{font-size:18px;margin:24px 0 8px}
+blockquote{margin:16px 0;padding:12px 18px;background:var(--membrane);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;color:#4a453d}
+blockquote p{margin:4px 0}
+hr{border:0;border-top:1px dashed var(--line);margin:28px 0}
+code{font-family:inherit;background:var(--membrane);padding:1px 6px;border-radius:4px;font-size:.92em}
+pre{background:var(--membrane);padding:14px 18px;border-radius:8px;overflow:auto}
+pre code{background:none;padding:0}
+.tbl{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.6}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:var(--teal);color:#fff;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#FBF7F0}
+.dl{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:16px 0}
+.dl a{display:block;padding:12px 16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink)}
+.dl a:hover{border-color:var(--paddy)}
+.dl a b{display:block;color:var(--teal)}
+.dl a span{font-size:13px;color:var(--stone)}
+.dl a.main{background:var(--teal);color:#fff;grid-column:1/-1}
+.dl a.main b{color:var(--gold)}
+.dl a.main span{color:rgba(255,255,255,.8)}
+details{margin:10px 0;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+details summary{cursor:pointer;padding:10px 16px;font-weight:600;color:var(--teal)}
+details .in{padding:0 16px 14px}
+details .in p{margin:6px 0;font-size:14px;color:var(--stone)}
+.foot{margin-top:40px;font-size:13px;color:var(--stone)}
+@media (max-width:900px){.wrap{grid-template-columns:1fr;padding:16px 10px 60px;gap:16px}nav.toc{position:static;max-height:none;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 18px}nav.toc ul ul{display:none}article{padding:24px 18px}h1{font-size:26px}h2{font-size:21px}body{font-size:16px}.bar{padding:10px 12px}}
+@media print{.bar,nav.toc{display:none}.wrap{display:block;padding:0}article{border:0;padding:0}body{background:#fff}h2{break-after:avoid}tr{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="bar"><span class="brand">红河同路</span><a href="report.html">产品规划说明报告</a><a href="materials.html" class="on">甲方资料清单与填写表</a><a href="../index.html">返回领导汇报</a></div>
+<div class="wrap">
+<nav class="toc"><div class="h">目录</div><div class="toc">
+<ul>
+<li><a href="#1-每站数量与位置">1. 每站数量与位置</a></li>
+<li><a href="#2-版面">2. 版面</a></li>
+<li><a href="#3-材质">3. 材质</a></li>
+<li><a href="#4-验收">4. 验收</a></li>
+<li><a href="#5-维护">5. 维护</a></li>
+<li><a href="#6-时间">6. 时间</a></li>
+</ul>
+</div>
+</nav>
+<article>
+<h1 id="现场立牌制作与安装规范">现场立牌制作与安装规范</h1>
+<blockquote>
+<p>用途：四站「扫码打卡」立牌的设计、制作、安装、维护。立牌是山区没信号、定位不准时唯一的打卡方式（08 号验收标准第 1、7 条），必须可靠。<br />
+小程序码由运营后台 A4-2 生成，下载 PDF 直接交给制作单位。<strong>不要自己用网上工具生成二维码</strong>，后台生成的码带站点信息、可作废更换。</p>
+</blockquote>
+<hr />
+<h2 id="1-每站数量与位置">1. 每站数量与位置</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>站</th>
+<th>数量</th>
+<th>位置原则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>迤萨路口</td>
+<td>1–2 块</td>
+<td>游客服务中心门口、停车场人行出口</td>
+</tr>
+<tr>
+<td>森林公园</td>
+<td>1–2 块</td>
+<td>游客中心或主停车场步行区</td>
+</tr>
+<tr>
+<td>马帮古城</td>
+<td>2 块</td>
+<td>古城入口服务点；不安装在文物本体上，不打孔、不粘贴在文物建筑墙面</td>
+</tr>
+<tr>
+<td>撒玛坝梯田</td>
+<td>2 块</td>
+<td>观景台停车场人行区、木栈道入口</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>必须</strong>：</p>
+<ol>
+<li>装在<strong>停好车之后步行能到</strong>的地方，人站着扫码不挡车道。</li>
+<li>不装在匝道、主路边、弯道、临崖处、曾经滑塌的地段。</li>
+<li>不装在「拍照点」旁边，避免人群聚集在危险处。</li>
+<li>白天顺光、晚上有照明（或立牌自带反光）；扫码面朝人行方向。</li>
+<li>每块立牌安装后，由景区人员用手机实测：能扫出、进入的是对应站点。</li>
+</ol>
+<p>位置确认后，在 <a href="materials.html#tpl-站点信息"><code>templates/站点信息.csv</code></a> 和后台 A4-2 填「位置说明」（例：观景台停车场人行出口左侧，距离公厕 20 米）。</p>
+<h2 id="2-版面">2. 版面</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>规格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>尺寸</td>
+<td>600 × 900 mm（竖版）；空间不足可用 400 × 600 mm</td>
+</tr>
+<tr>
+<td>小程序码</td>
+<td>边长 ≥ 250 mm（大版）/ ≥ 180 mm（小版）；四周留白 ≥ 码边长的 10%</td>
+</tr>
+<tr>
+<td>码的高度</td>
+<td>码中心离地 1.2–1.4 米</td>
+</tr>
+<tr>
+<td>文字</td>
+<td>自上而下：「红河同路 · {站名}」；「扫码打卡」（最大字）；「请停好车后扫码 · 行驶中请勿操作」；码；「微信扫一扫 · 进入红河同路小程序」；底部「{县文旅局} · 服务电话 {电话}」</td>
+</tr>
+<tr>
+<td>色彩</td>
+<td>底色米白或浅色，码为深色（黑或深青）；<strong>码不能反色、不能加花纹、不能改码中间的图标</strong></td>
+</tr>
+<tr>
+<td>字体</td>
+<td>黑体 / 思源黑体；站名 ≥ 80 mm 字高</td>
+</tr>
+<tr>
+<td>双语</td>
+<td>「扫码打卡 / Scan to check in」</td>
+</tr>
+<tr>
+<td>禁止</td>
+<td>不放商业广告、不放其他二维码（避免扫错）、不放「拍照打卡点」字样</td>
+</tr>
+</tbody>
+</table></div>
+<p>版面源文件由运营提供（AI / PDF），只替换站名和码。</p>
+<h2 id="3-材质">3. 材质</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>部位</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>牌面</td>
+<td>3 mm 铝板 + 户外 UV 打印 + 哑光防紫外线覆膜（防反光，反光会扫不出）</td>
+</tr>
+<tr>
+<td>立柱 / 底座</td>
+<td>镀锌钢管或与景区现有导视统一；抗风；底座混凝土预埋</td>
+</tr>
+<tr>
+<td>古城</td>
+<td>与古城导视风格统一，使用独立底座，不在文物上固定</td>
+</tr>
+<tr>
+<td>防护</td>
+<td>牌面四角圆角；边缘无毛刺</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="4-验收">4. 验收</h2>
+<ol>
+<li>3 台不同手机（安卓、苹果各至少 1 台），在 0.5 米、1 米、1.5 米距离扫码，均能识别并进入对应站点打卡页。</li>
+<li>弱光（傍晚）实测一次。</li>
+<li>拍照：远景 1 张（看周边环境）+ 近景 1 张（看码），发给运营在 A4-2 归档。</li>
+</ol>
+<h2 id="5-维护">5. 维护</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>情况</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>后台提醒「近 7 天无扫码」</td>
+<td>景区 2 天内到现场检查：是否被遮挡、损坏、褪色</td>
+</tr>
+<tr>
+<td>牌面损坏、褪色、被贴小广告</td>
+<td>在后台作废旧码 → 生成新码 → 重新制作；旧牌拆除</td>
+</tr>
+<tr>
+<td>发现被他人覆盖了别的二维码</td>
+<td>立即拆除覆盖物，后台作废该码并生成新码，报运营</td>
+</tr>
+<tr>
+<td>雨季、火险期</td>
+<td>每月巡检一次</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="6-时间">6. 时间</h2>
+<p>立牌须在上线前 3 周安装完毕，用于现场联调和店员培训。</p>
+<p class="foot">配套文件：<a href="materials.html">资料清单</a> · <a href="materials-sign.html">立牌制作规范</a> · <a href="materials-license.html">授权书模板</a> · <a href="materials.html#templates">填写模板</a></p>
+<p class="foot">本页由 materials/立牌制作规范.md 生成，内容以该文件为准。</p>
+</article>
+</div>
+<script>
+function openTarget(){var t=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1)));if(t&&t.tagName==='DETAILS'){t.open=true;t.scrollIntoView();}}
+window.addEventListener('hashchange',openTarget);openTarget();
+</script>
+</body>
+</html>

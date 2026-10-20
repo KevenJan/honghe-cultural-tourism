@@ -9,6 +9,15 @@
 
 详细版的文字版是 [`docs/08-产品规划说明报告.md`](../docs/08-产品规划说明报告.md)；开发细节见 `docs/09-功能交互规格/`、`docs/10-数据模型与接口.md`。
 
+领导版最后一页可以直接打开两份给甲方的材料（网页版，随汇报一起部署，手机也能看）：
+
+| 页面 | 内容 | 来源 |
+|---|---|---|
+| `docs/report.html` | 产品规划说明报告（文字版） | `docs/08-产品规划说明报告.md` |
+| `docs/materials.html` | 甲方资料清单；页尾有 14 个填写模板的字段预览，可下载单表 CSV 或汇总 Excel | `materials/README.md`、`materials/templates/` |
+| `docs/materials-sign.html` | 立牌制作规范 | `materials/立牌制作规范.md` |
+| `docs/materials-license.html` | 授权书模板 | `materials/授权书模板.md` |
+
 ## 打开方式
 
 - **本地**：直接双击 `index.html`，用 Chrome / Edge / Safari 打开即可，不需要联网。
@@ -28,7 +37,7 @@
 | 直达某页 | 地址后加 `#页码`，如 `index.html#6` |
 
 - 「同心石榴」演示（领导版第 6 页、详细版第 17 页）：点手机里的大籽会放大；点「认识这颗籽」进入详情，答对题后籽会出现金边；按钮可以模拟在某一站打卡（这一瓣点亮），「重置」恢复初始状态。
-- 领导版最后一页可以点进详细版。
+- 领导版最后一页可以点进详细版、文字版报告、资料清单与填写表。
 - 详细版第 2 页目录、第 8 页模块地图可以点击跳转；第 41 页概念稿点击可放大。
 
 ## 导出 PDF
@@ -83,6 +92,8 @@ rsync -av presentation/ user@server:/var/www/honghe-presentation/
 presentation/
 ├── index.html          领导版 14 页，每页 <aside class="notes"> 为讲稿
 ├── detail.html         详细版 42 页
+├── docs/               文字版报告与甲方资料（由 tools/build_presentation_docs.py 生成，不要手改）
+│   └── files/          填写模板 CSV 与汇总 Excel
 ├── css/
 │   ├── deck.css        演示框架与版式
 │   ├── phone.css       小程序界面重绘
@@ -105,6 +116,12 @@ presentation/
 
 ```bash
 python3 tools/build_presentation_font.py
+```
+
+- 改了 `docs/08-产品规划说明报告.md` 或 `materials/` 里的内容，要重新生成网页版：
+
+```bash
+pip install markdown && python3 tools/build_presentation_docs.py
 ```
 
 - 石榴籽坐标以 `assets/illustrations/pomegranate/pomegranate-layout.json` 为准；JSON 改动后，同一个脚本会一并重新生成 `js/layout.js`。
