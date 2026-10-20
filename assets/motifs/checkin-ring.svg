@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+<!-- 打卡主按钮外圈；定位中时给 .pulse 加 scale 1→1.25、opacity .6→0 的循环动画，只播放到定位返回为止 -->
+<circle class="pulse" cx="120" cy="120" r="112" fill="#D9A441" opacity=".18"/>
+<circle cx="120" cy="120" r="96" fill="#D9A441" opacity=".35"/>
+<circle cx="120" cy="120" r="80" fill="#A8452F"/>
+<circle cx="120" cy="120" r="72" fill="none" stroke="#F6F1E8" stroke-width="1.5" stroke-dasharray="4 5"/>
+</svg>

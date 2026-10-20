@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>红河同路 · 领导汇报</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="红河同路：云南省红河县四站实景长廊文旅小程序，领导汇报版。">
+<link rel="icon" href="assets/logo/logo-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/deck.css">
+<link rel="stylesheet" href="css/phone.css">
+<link rel="stylesheet" href="css/admin.css">
+<style>
+  /* 领导版：字号整体放大，一页只讲一件事 */
+  .table th, .table td { font-size: 27px; padding: 24px 30px; }
+  .table th { font-size: 25px; }
+  .card p, .card li { font-size: 26px; }
+  .note { font-size: 24px; }
+  .point h4 { font-size: 32px; }
+  .point p { font-size: 25px; }
+  .points { gap: 28px; }
+  .phase h3 { font-size: 44px; }
+  .phase .when { font-size: 25px; }
+  .phase li { font-size: 28px; line-height: 1.8; }
+  .loop .nodes span { font-size: 23px; padding: 18px 16px; }
+  .loop .ret b { font-size: 21px; }
+  .step { min-height: 300px; }
+  .step .ico { width: 104px; height: 104px; display: block; margin-bottom: 10px; }
+  .step h4 { font-size: 40px; }
+  .step p { font-size: 26px; }
+  .gain { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .gain .card { padding: 32px 32px; }
+  .gain .card h3 { font-size: 40px; }
+  .gain .card .was { font-size: 22px; line-height: 1.55; color: var(--stone); margin: 14px 0 16px; padding-bottom: 16px; border-bottom: 2px dashed rgba(34,32,28,.12); }
+  .gain .card .now { font-size: 26px; line-height: 1.65; color: #3E3A34; }
+  .guard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 48px; }
+  .guard > div { background: rgba(255,255,255,.07); border-radius: 26px; padding: 40px 40px 44px; }
+  .guard h3 { font-family: var(--serif); font-size: 46px; color: #fff; }
+  .guard .why { font-size: 24px; color: var(--gold); margin: 10px 0 22px; }
+  .guard li { font-size: 27px; line-height: 1.6; color: rgba(255,255,255,.9); margin: 16px 0 0 1.1em; }
+  .ask2 { display: grid; grid-template-columns: 1fr 1.15fr; gap: 32px; margin-top: 40px; }
+  .ask2 h3 { font-family: var(--serif); font-size: 40px; margin-bottom: 18px; }
+  .ask2 .card { padding: 34px 38px; }
+  .ask2 ol { margin-left: 1.3em; }
+  .ask2 li { font-size: 28px; line-height: 1.5; margin: 18px 0; }
+  .ask2 li small { display: block; font-size: 21px; color: var(--stone); margin-top: 4px; }
+  .ask2 .decide li { color: #fff; }
+  .ask2 .decide li small { color: rgba(255,255,255,.65); }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div id="viewport">
+<main id="stage">
+
+<!-- ============ 01 封面 ============ -->
+<section class="slide cover" data-title="封面">
+  <div class="bg" style="background-image:url(assets/sites/site-04-samaba-terraces@750w.webp)"></div>
+  <div class="shade"></div>
+  <div class="content">
+    <div class="brand rise"><img src="assets/logo/logo-full@400.webp" alt="红河同路标志"><span class="tag gold" style="background:rgba(217,164,65,.2);color:var(--gold)">县域文旅小程序 · 领导汇报</span></div>
+    <h1 class="rise d1" style="margin-top:46px">红河同路</h1>
+    <div class="sub rise d2">各族同路走，好物一路带</div>
+    <div class="meta rise d3">
+      <b>云南省红河县 · 四站实景长廊</b><br>
+      迤萨路口 · 马帮侨乡森林公园 · 马帮古城 · 撒玛坝梯田<br>
+      2026 年 10 月
+    </div>
+  </div>
+  <img class="stripes rise d4" src="assets/contour-stripes.svg" alt="">
+  <img class="mascot rise d3" src="assets/mascot/tuotuo-02-wave@400.webp" alt="吉祥物驮驮">
+  <aside class="notes"><p>各位领导好。今天用十几分钟汇报「红河同路」：它是什么、能带来什么、怎么保证不出问题、需要县里定哪几件事。</p><p>具体的功能细节和开发文档已经另外整理好，交给工作专班和技术团队，今天不展开。</p></aside>
+</section>
+
+<!-- ============ 02 一句话 ============ -->
+<section class="slide" data-title="一句话说清">
+  <div class="kicker">是什么</div>
+  <h2 class="title">让路过红河的游客停下来、看明白、带东西走</h2>
+  <div class="timeline rise" style="margin-top:50px">
+    <div class="step"><img class="ico" src="assets/grid/grid-01-checkin@192.webp" alt=""><h4>停车打卡</h4><p>在四个停车点停好车，手机上点「我到了」</p></div>
+    <div class="step"><img class="ico" src="assets/grid/grid-02-four-sites@192.webp" alt=""><h4>看 3 分钟</h4><p>看几张图文、听一段讲解，知道这里的故事</p></div>
+    <div class="step"><img class="ico" src="assets/grid/grid-05-gift@192.webp" alt=""><h4>答题领礼</h4><p>答 3 道题攒分，到现场柜台领一份县里的小礼品</p></div>
+    <div class="step"><img class="ico" src="assets/grid/grid-06-local-goods@192.webp" alt=""><h4>买本地货</h4><p>红米、茶叶、手工艺品，下单寄回家，钱进合作社</p></div>
+  </div>
+  <div class="card rise d2" style="margin-top:40px;padding:30px 38px;display:flex;gap:40px;align-items:center">
+    <p style="font-size:27px;flex:1"><b>游客</b>用微信小程序，不用下载、不用注册就能看；<b>柜台店员、合作社</b>也用同一个小程序；<b>县里</b>在电脑后台管内容、管礼品、看数据。</p>
+    <span class="tag teal" style="font-size:26px;height:auto;padding:12px 24px">全程对游客免费</span>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>是什么</span></div>
+  <aside class="notes"><p>一句话：让路过红河的自驾游客停下来，花 3 分钟了解这里，答 3 道题领一份小礼品，顺手把本地的好东西买走。</p><p>它就是一个微信小程序，游客不用下载、不用注册。县里有一个电脑后台，用来管内容、管礼品、看数据。</p></aside>
+</section>
+
+<!-- ============ 03 为什么做 ============ -->
+<section class="slide" data-title="为什么做">
+  <div class="kicker">为什么做</div>
+  <h2 class="title">做成以后，县里能得到的四个结果</h2>
+  <div class="stats rise" style="margin-top:26px;grid-template-columns:repeat(5,1fr);gap:18px">
+    <div class="stat" style="padding:18px 22px"><div class="num" style="font-size:48px">36.09<small>万</small></div><div class="k" style="font-size:18px;margin-top:8px">户籍人口</div></div>
+    <div class="stat" style="padding:18px 22px"><div class="num" style="font-size:48px">96.89<small>%</small></div><div class="k" style="font-size:18px;margin-top:8px">少数民族占比</div></div>
+    <div class="stat" style="padding:18px 22px"><div class="num" style="font-size:48px">5<small>个</small></div><div class="k" style="font-size:18px;margin-top:8px">世居民族</div></div>
+    <div class="stat" style="padding:18px 22px"><div class="num" style="font-size:48px">1<small>万余</small></div><div class="k" style="font-size:18px;margin-top:8px">华侨华人</div></div>
+    <div class="stat" style="padding:18px 22px"><div class="num" style="font-size:48px">2<small>个 4A</small></div><div class="k" style="font-size:18px;margin-top:8px">撒玛坝梯田、马帮古城</div></div>
+  </div>
+  <div class="gain rise d1" style="margin-top:28px">
+    <div class="card"><h3>留得住人</h3><div class="was">现在：自驾游客下了高速直接去下一个县</div><div class="now">每站 3 分钟、走一站就有礼，给游客一个停车的理由、一个多走一站的理由</div></div>
+    <div class="card"><h3>讲得清文化</h3><div class="was">现在：介绍牌字多、没人讲，讲错了还有风险</div><div class="now">四站讲各族一起生活的故事，全部经县里四个单位审定才上线</div></div>
+    <div class="card"><h3>卖得出物产</h3><div class="was">现在：游客想买正宗的本地货，找不到、带不走</div><div class="now">看到就能下单寄回家，写清是哪个村、哪个合作社出的，钱直接落到村里</div></div>
+    <div class="card" style="background:var(--deep-teal)"><h3 style="color:#fff">看得见效果</h3><div class="was" style="color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.2)">现在：来了多少人、带动多少消费，说不清</div><div class="now" style="color:rgba(255,255,255,.9)">每天自动统计到访、领礼、销售，每月自动出一页简报</div></div>
+  </div>
+  <div class="src">县情数据：红河县人民政府网站县情概况（2025 年度口径）。政策依据：《民族团结进步促进法》（2026 年 7 月 1 日施行）。</div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>为什么做</span></div>
+  <aside class="notes"><p>红河县有 36 万人，少数民族占近 97%，五个世居民族，还是侨乡，有两个 4A 景区。资源不缺，缺的是让游客停下来、看明白、买得走。</p><p>做成以后，县里得到四个结果：留得住人、讲得清文化、卖得出物产、看得见效果。最后一条对县里最实用：来了多少人、卖了多少东西，每天都有数，每月自动出简报。</p></aside>
+</section>
+
+<!-- ============ 04 四站 ============ -->
+<section class="slide" data-title="四站">
+  <div class="kicker">走哪里</div>
+  <h2 class="title">一条路上四个站，每站讲一件各族一起做的事</h2>
+  <div class="sites rise">
+    <div class="trail"></div>
+    <div class="site-card"><div class="img" style="background-image:url(assets/sites/site-01-yisa-gateway@750w.webp)"><span class="tag">路</span></div><div class="body"><h3>迤萨路口</h3><div class="slogan">同住一个县，同走一条路</div><p>下高速第一站。认识红河县，知道这一路有什么。</p></div></div>
+    <div class="site-card"><div class="img" style="background-image:url(assets/sites/site-02-forest-park@750w.webp)"><span class="tag">水</span></div><div class="body"><h3>马帮侨乡森林公园</h3><div class="slogan">大家共用一沟水</div><p>森林养水、水养梯田。护林防火，人人有份。</p></div></div>
+    <div class="site-card"><div class="img" style="background-image:url(assets/sites/site-03-mabang-oldtown@750w.webp)"><span class="tag">街</span></div><div class="body"><h3>马帮古城</h3><div class="slogan">出门的人和等的人</div><p>马帮走出去，侨乡建起来。一条街上的乡愁。</p></div></div>
+    <div class="site-card"><div class="img" style="background-image:url(assets/sites/site-04-samaba-terraces@750w.webp)"><span class="tag">田</span></div><div class="body"><h3>撒玛坝梯田</h3><div class="slogan">同一片梯田，同一张长桌</div><p>各族一起开田、一起过节，长街宴摆到一张桌上。</p></div></div>
+  </div>
+  <p class="note rise d2" style="margin-top:30px;font-size:22px">四站不分先后，从哪站开始都行。每站都设在停车方便的地方，停好车 3 分钟就能完成。</p>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>走哪里</span></div>
+  <aside class="notes"><p>四个站在同一条路上，分别讲路、水、街、田。每一站讲的都是各族在这里一起做的事，而不是分开介绍每个民族。</p><p>四站没有先后顺序，游客从哪站开始都行。打卡点都设在停车场、游客中心，不设在路边。</p></aside>
+</section>
+
+<!-- ============ 05 游客手里 ============ -->
+<section class="slide" data-title="游客手机上的样子">
+  <div class="kicker">游客看到什么</div>
+  <h2 class="title">游客手机上就是这四个画面</h2>
+  <div class="phones" style="margin-top:26px;gap:52px">
+    <div class="rise"><div class="pw" style="--s:.7" data-screen="home"></div><div class="phone-cap"><b>打开</b>不用注册就能看</div></div>
+    <div class="rise d1"><div class="pw" style="--s:.7" data-screen="success"></div><div class="phone-cap"><b>到了</b>盖一个章</div></div>
+    <div class="rise d2"><div class="pw" style="--s:.7" data-screen="quiz"></div><div class="phone-cap"><b>答题</b>答错也不扣分</div></div>
+    <div class="rise d3"><div class="pw" style="--s:.7" data-screen="gift"></div><div class="phone-cap"><b>领礼</b>柜台扫码就发</div></div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>游客看到什么 · 界面为设计示意</span></div>
+  <aside class="notes"><p>这是游客手机上的四个画面：打开、到了盖章、答题、领礼。</p><p>几个细节都是从游客心理出发的：打开不用注册；答错不扣分，先看讲解；分数够了直接告诉他「现在可以领第几档」。山里没信号也能用，下载过的站点能看、能听，扫现场的牌子也能打卡。</p></aside>
+</section>
+
+<!-- ============ 06 同心石榴 ============ -->
+<section class="slide" data-title="同心石榴" id="slide-pg-demo">
+  <div class="kicker">民族团结怎么讲 · 可以现场点</div>
+  <h2 class="title">同心石榴：四站走下来，各族像石榴籽一样抱在一起</h2>
+  <div class="row" style="margin-top:22px;gap:56px">
+    <div class="rise"><div class="pw" style="--s:.84" data-screen="pomegranate" id="pg-phone"></div></div>
+    <div class="grow col" style="gap:20px">
+      <div class="points rise d1">
+        <div class="point"><i>1</i><div><h4>四瓣就是四站</h4><p>到一站，这一瓣就亮起来；四站走完，整颗石榴全亮。</p></div></div>
+        <div class="point"><i>2</i><div><h4>五颗大籽是世居五族</h4><p>汉、哈尼、彝、傣、瑶，<b class="hl">一样大、一样颜色</b>，不排先后。点一颗，能看到它和其他民族一起做的事。</p></div></div>
+        <div class="point"><i>3</i><div><h4>没审定的不讲</h4><p>内容还在整理的籽显示「正在整理」，宁可空着，不编。</p></div></div>
+      </div>
+      <div class="card rise d2" style="padding:20px 26px">
+        <p style="font-size:20px">点手机里任意一颗大籽试试。下面按钮模拟在某一站打卡：</p>
+        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap" id="pg-controls">
+          <button class="btn sm ghost" data-site="yisa" style="height:44px;font-size:20px;padding:0 20px;border-radius:22px">迤萨路口</button>
+          <button class="btn sm ghost" data-site="forest" style="height:44px;font-size:20px;padding:0 20px;border-radius:22px">森林公园</button>
+          <button class="btn sm ghost" data-site="oldtown" style="height:44px;font-size:20px;padding:0 20px;border-radius:22px">马帮古城</button>
+          <button class="btn sm ghost" data-site="samaba" style="height:44px;font-size:20px;padding:0 20px;border-radius:22px">撒玛坝</button>
+          <button class="btn sm" data-reset style="height:44px;font-size:20px;padding:0 20px;border-radius:22px;background:var(--membrane);color:var(--terracotta)">重置</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>民族团结怎么讲 · 对外统一用「交往交流交融」</span></div>
+  <aside class="notes"><p>这是讲民族团结的部分，叫「同心石榴」。一颗石榴四瓣，对应四个站；每瓣五颗大籽，对应五个世居民族，五颗一样大、一样颜色，不按人口排。</p><p>（现场点一颗籽演示）点开后，它和同一瓣的其他民族用金线连在一起，下面写着一起做的事，比如一起开田、一起跳乐作。</p><p>分寸上守一条：没经过审定的内容一律不讲，显示「正在整理」。</p></aside>
+</section>
+
+<!-- ============ 07 礼品 ============ -->
+<section class="slide" data-title="走一站就有礼">
+  <div class="kicker">留住游客</div>
+  <h2 class="title">走一站就有礼，走得越多礼越好</h2>
+  <div class="row" style="margin-top:30px;gap:34px;align-items:flex-start">
+    <table class="table rise grow">
+      <thead><tr><th style="width:260px">档位</th><th style="width:260px">条件</th><th>礼品（示例，由县里定）</th></tr></thead>
+      <tbody>
+        <tr><td>一档 · 一站礼</td><td>走完 1 站</td><td>梯田红米小袋 / 本地茶小样 / 竹编书签</td></tr>
+        <tr><td>二档 · 同路礼</td><td>走完 2 站 · 40 分</td><td>红米小礼盒 / 竹编杯垫</td></tr>
+        <tr><td>三档 · 熟客礼</td><td>走完 3 站 · 70 分</td><td>傣陶小器 / 山货组合</td></tr>
+        <tr><td>四档 · 同心礼</td><td>四站走满 · 100 分</td><td>手艺人署名文创 + 梯田红米</td></tr>
+      </tbody>
+    </table>
+    <div class="col" style="gap:20px;width:560px;flex:none">
+      <div class="card rise d1" style="padding:24px 30px"><h3 style="font-size:32px">每人每年一份</h3><p>凭证件领，每个证件每年一次，取当时最高一档。</p></div>
+      <div class="card rise d2" style="padding:24px 30px"><h3 style="font-size:32px">防重复领</h3><p>领礼码 30 秒一换，店员当面核对证件，系统自动拦截第二次。</p></div>
+      <div class="card rise d3" style="padding:24px 30px"><h3 style="font-size:32px">每一份都有账</h3><p>发给谁、哪个柜台、几点发的都有记录；库存快没了自动提醒补货。</p></div>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>留住游客 · 分数只用来换礼品，不能当钱用</span></div>
+  <aside class="notes"><p>礼品是让游客多走一站的抓手。走一站就能领第一档，门槛很低；走得越多，礼品越好。从第二档起还要求答题分数达线，每站满分 30 分，认真看了基本都能达到。领之前手机会提示「再走一站可以领更好的」，让游客自己选。</p><p>领导可能关心会不会被薅羊毛：每个证件每年只能领一次，店员当面核对证件，系统自动拦截重复领取。每一份礼品发给了谁、在哪个柜台发的，后台都查得到。</p><p>礼品的品种和数量由县文旅局和合作社商定，后台随时可以调整。</p></aside>
+</section>
+
+<!-- ============ 08 带货 ============ -->
+<section class="slide" data-title="钱落到合作社">
+  <div class="kicker">带动增收</div>
+  <h2 class="title">游客看到的物产能买走，钱落到村里的合作社</h2>
+  <div class="row" style="margin-top:30px;gap:44px;align-items:flex-start">
+    <div class="grow col" style="gap:26px">
+      <div class="loop rise">
+        <div class="nodes"><span>在站点看到本地物产</span><span>手机下单，寄回家或现场自提</span><span>合作社收到订单、发货</span><span class="end">每月结算，钱到合作社</span></div>
+        <div class="ret"><b>游客回家后还能「再买一次」</b></div>
+      </div>
+      <div class="points rise d1">
+        <div class="point"><i>1</i><div><h4>只卖本地货，写清来路</h4><p>每件商品写明哪个村、谁种的、什么时候收的。没有来路的不上架。</p></div></div>
+        <div class="point"><i>2</i><div><h4>不搞套路</h4><p>只有一个价格，不打折倒计时；刚下高速的入口站只让收藏，不催付款。</p></div></div>
+        <div class="point"><i>3</i><div><h4>算得清每一站带了多少货</h4><p>每笔订单记着游客是在哪一站之后下单的，县里能看出哪一站带货最好。</p></div></div>
+      </div>
+    </div>
+    <div class="rise d2"><div class="pw" style="--s:.74" data-screen="product"></div><div class="phone-cap"><b>商品页</b>写清产地和生产者</div></div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>带动增收 · 一期统一收款、按月结算；二期开通直接分账到合作社</span></div>
+  <aside class="notes"><p>带货这一块，目标是让钱落到村里。游客在站点看到本地物产，可以下单寄回家，合作社在手机上收到订单、发货，每月结算。</p><p>为了让游客放心买：只卖本地货，每件写清哪个村、谁种的；只有一个价格，不搞促销套路。</p><p>对县里有用的是：每笔订单都记着游客是在哪一站之后买的，能看出每一站带动了多少消费。</p></aside>
+</section>
+
+<!-- ============ 09 守住底线 ============ -->
+<section class="slide dark" data-title="三条底线">
+  <div class="kicker">不出问题</div>
+  <h2 class="title" style="color:#fff">三条底线，设计时就守住</h2>
+  <div class="guard">
+    <div class="rise"><h3>行车安全</h3><div class="why">不能让人边开车边看手机</div><ul>
+      <li>打卡点只设在停车场、游客中心，路边、匝道一律不设</li>
+      <li>必须先选「我已停稳」或「我是乘客」</li>
+      <li>车还在走，不让打卡</li></ul></div>
+    <div class="rise d1"><h3>内容不出错</h3><div class="why">民族、宗教、文物的说法不能讲错</div><ul>
+      <li>文化馆、民宗局、文旅局把关（古城加文物部门），审完才上线</li>
+      <li>发现问题可以一键下线</li>
+      <li>游客提问只答审定过的，答不了就请他问工作人员</li></ul></div>
+    <div class="rise d2"><h3>个人信息安全</h3><div class="why">游客要放心用</div><ul>
+      <li>只在点「我到了」时看一次位置，不跟踪</li>
+      <li>证件号只用来防重复领礼，系统里不存原号</li>
+      <li>不收集手机号，后台查用户一律打码</li></ul></div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>不出问题</span></div>
+  <aside class="notes"><p>领导最关心的往往是会不会出事。我们在设计时守了三条底线。</p><p>第一是行车安全：打卡点只设在停车场，必须先确认停稳了，车还在走就不让打卡。</p><p>第二是内容不出错：所有内容经文化馆、民宗局、文旅局审定才上线，古城的内容还要文物部门看；出了问题一键下线。游客提问时，系统只回答审定过的内容，不会自己编。</p><p>第三是个人信息：只在点击时看一次位置，证件号不存原号，不收集手机号。</p></aside>
+</section>
+
+<!-- ============ 10 看得见效果 ============ -->
+<section class="slide" data-title="看得见效果">
+  <div class="kicker">看得见效果</div>
+  <h2 class="title">领导打开电脑，就能看到每天的数</h2>
+  <div class="row" style="margin-top:24px;gap:36px;align-items:flex-start">
+    <div class="rise"><div class="dw" style="--s:.82" data-admin="dash"></div><div class="phone-cap"><b>领导账号看到的页面</b>数字为示意</div></div>
+    <div class="grow col" style="gap:16px">
+      <div class="card rise d1" style="padding:22px 26px"><h3 style="font-size:28px">每天自动更新</h3><p style="font-size:21px">来了多少人、走了几站、领了多少礼、卖了多少货，按站、按天都能看。</p></div>
+      <div class="card rise d2" style="padding:22px 26px"><h3 style="font-size:28px">每月自动出简报</h3><p style="font-size:21px">一页纸，和上个月比，直接导出给领导，不用人工统计。</p></div>
+      <div class="card rise d3" style="padding:22px 26px;background:var(--membrane)"><h3 style="font-size:28px">看了能改</h3><p style="font-size:21px">哪站人少就改那站内容，哪档礼品不够就加库存，哪个商品卖得好就多备货。</p></div>
+    </div>
+  </div>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>看得见效果 · 领导可开只看数据的账号</span></div>
+  <aside class="notes"><p>这是领导账号登录后看到的页面。每天自动更新：来了多少人、走了几站、领了多少礼、卖了多少货。</p><p>每月自动生成一页简报，可以直接导出。更重要的是看了能改：哪站人少就改哪站内容，礼品不够就补库存。</p></aside>
+</section>
+
+<!-- ============ 11 谁来做 ============ -->
+<section class="slide" data-title="谁来做">
+  <div class="kicker">谁来做</div>
+  <h2 class="title">上线后，各单位各管一块</h2>
+  <table class="table rise" style="margin-top:34px">
+    <thead><tr><th style="width:520px">单位</th><th>负责</th></tr></thead>
+    <tbody>
+      <tr><td>县文旅局</td><td>牵头，指定运营单位，最终发布内容，协调各景区</td></tr>
+      <tr><td>运营单位（文旅局指定）</td><td>日常运营：录内容、管礼品、管商城、收款结算、客服</td></tr>
+      <tr><td>县文化馆 · 县民宗局 · 文物部门</td><td>提供并审定内容，各审各的部分</td></tr>
+      <tr><td>各景区</td><td>现场立牌、柜台人员、礼品存放</td></tr>
+      <tr><td>县农业农村局 · 工信局</td><td>组织合作社、手艺人入驻，核实产地</td></tr>
+      <tr><td>合作社、手艺人</td><td>供货、发货</td></tr>
+    </tbody>
+  </table>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>谁来做</span></div>
+  <aside class="notes"><p>上线后的日常工作主要由运营单位来做。审定单位只需要在后台审自己负责的部分；景区负责现场的牌子、柜台和礼品。</p></aside>
+</section>
+
+<!-- ============ 12 怎么建 ============ -->
+<section class="slide" data-title="分步建设">
+  <div class="kicker">怎么建</div>
+  <h2 class="title">分三步走，第一步先把主线跑通</h2>
+  <div class="phases rise" style="margin-top:34px;grid-template-columns:1.5fr 1fr 1fr">
+    <div class="phase now"><h3>一期 · 跑通主线</h3><div class="when">打卡、看内容、答题、领礼、买东西、后台、数据看板</div><ul>
+      <li>四站都能打卡，山里没信号也能用</li>
+      <li>四站内容全部审定后上线</li>
+      <li>领礼从出码到发放走通，重复领能拦住</li>
+      <li>下单、合作社发货、游客收货走通</li>
+      <li>领导能看到当天的数据</li></ul></div>
+    <div class="phase"><h3>二期</h3><div class="when">内容做深、渠道做广</div><ul>
+      <li>学校研学、团队模式</li><li>更多站点和支线</li><li>帮扶单位团购</li><li>钱直接分到合作社</li></ul></div>
+    <div class="phase"><h3>三期</h3><div class="when">体验做宽</div><ul>
+      <li>古城马帮动画</li><li>英文导览</li><li>越南语、老挝语</li></ul></div>
+  </div>
+  <p class="note rise d2" style="margin-top:24px;font-size:21px">一期刻意不做：一直跟踪定位、导航、AI 自动生成讲解。这些要么有安全风险，要么要另外备案。</p>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>怎么建</span></div>
+  <aside class="notes"><p>建设分三步。一期把主线跑通，左边五条就是一期上线的标志，每一条都可以现场检查。二期再做研学、团购、更多站点；三期做动画和外语。</p><p>一期有几样刻意不做，比如一直跟踪定位、AI 自动讲解，这些有安全风险或者需要另外备案，等主线稳定后再说。</p></aside>
+</section>
+
+<!-- ============ 13 请领导定 ============ -->
+<section class="slide" data-title="需要县里定的事">
+  <div class="kicker">需要县里定的事</div>
+  <h2 class="title">请领导拍板三件事，协调五件事</h2>
+  <div class="ask2">
+    <div class="card decide rise" style="background:var(--deep-teal)">
+      <h3 style="color:var(--gold)">请领导拍板</h3>
+      <ol style="color:#fff">
+        <li>确定运营单位<small>不定下来，小程序无法注册上线</small></li>
+        <li>定下礼品品种、数量和各柜台人员<small>领礼环节靠它</small></li>
+        <li>文化馆、民宗局、文物部门、文旅局各指定审定人<small>没人审，内容就上不了线</small></li>
+      </ol>
+    </div>
+    <div class="card rise d1">
+      <h3>请相关部门配合</h3>
+      <ol>
+        <li>运营单位办好资质和收款账户<small>旅游服务类目、食品经营许可、微信支付</small></li>
+        <li>四站现场立牌的位置确认和安装<small>文旅局、各景区</small></li>
+        <li>首批内容提供，讲述人、照片、纹样的授权<small>文化馆</small></li>
+        <li>组织合作社、手艺人入驻<small>农业农村局、工信局</small></li>
+        <li>用户协议和隐私说明<small>运营单位，法律顾问审核</small></li>
+      </ol>
+    </div>
+  </div>
+  <p class="note rise d2" style="margin-top:22px;font-size:20px">需要各单位提供的资料已整理成清单和填写表，会后发给各单位联络人。</p>
+  <div class="slide-foot"><img src="assets/logo/logo-wordmark.svg" alt=""><span>需要县里定的事</span></div>
+  <aside class="notes"><p>这一页是今天最需要领导定的。左边三件请领导拍板：运营单位、礼品和柜台人员、各单位的审定人。其中运营单位最急，不定下来小程序连注册都做不了。</p><p>右边五件需要相关部门配合。各单位要提供的资料，我们已经整理成清单和填写表，会后发给联络人。</p></aside>
+</section>
+
+<!-- ============ 14 结束 ============ -->
+<section class="slide end" data-title="结束">
+  <img class="mascot rise" src="assets/mascot/tuotuo-05-cheer@400.webp" alt="驮驮庆祝">
+  <h2 class="rise d1">谢谢</h2>
+  <p class="rise d2">各族同路走，好物一路带</p>
+  <div class="deliver rise d3">
+    <span>产品规划说明报告（文字版）</span><span>甲方资料清单与填写表</span>
+    <span><a href="detail.html" style="color:inherit">详细版汇报（42 页，给工作专班）</a></span><span>功能规格与开发文档（给技术团队）</span>
+  </div>
+  <aside class="notes"><p>汇报就到这里，请各位领导指正，特别是上一页需要拍板的三件事。</p><p>会后可以发给各单位的材料：文字版报告、资料清单和填写表。工作专班需要看细节的，有 42 页的详细版；技术团队有完整的功能规格和开发文档。</p></aside>
+</section>
+
+</main>
+</div>
+
+<div id="controls">
+  <button id="btn-prev" title="上一页（←）">‹</button>
+  <span id="pager">1 / 14</span>
+  <button id="btn-next" title="下一页（→）">›</button>
+  <button id="btn-notes" title="讲稿（N）" style="font-size:14px">稿</button>
+  <button id="btn-full" title="全屏（F）">⤢</button>
+</div>
+<div id="help">← → / 空格 翻页 · F 全屏 · N 讲稿 · 地址加 ?mode=script 看全部讲稿</div>
+<div id="lightbox"><img alt=""><p>点击任意处关闭</p></div>
+
+<script src="js/layout.js"></script>
+<script src="js/data.js"></script>
+<script src="js/screens.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/pomegranate.js"></script>
+<script src="js/deck.js"></script>
+</body>
+</html>
