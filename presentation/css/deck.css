@@ -354,3 +354,11 @@ body.script #viewport, body.script #controls, body.script #help, body.script #pr
 .chain.v.tight .ch q { padding: 4px 10px; }
 .lp .flow { font-size: 21px; }
 .lp .done { font-size: 18px; }
+
+/* 手机、平板：隐藏键盘提示，控件缩小 */
+@media (pointer: coarse), (max-width: 900px) {
+  #help { display: none; }
+  #controls { right: 10px; bottom: 8px; gap: 6px; opacity: .45; }
+  #controls button { width: 32px; height: 32px; font-size: 15px; }
+  #notes-panel { bottom: 50px; font-size: 14px; padding: 12px 16px; max-height: 45vh; }
+}
