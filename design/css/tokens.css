@@ -1,0 +1,37 @@
+/* 红河同路 · 设计变量（与 assets/design-tokens.json 一致；改色先改 JSON，再同步这里） */
+@font-face { font-family: "HHSerif"; src: url("../fonts/hh-serif-bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  /* 颜色 */
+  --terracotta: #A8452F;   /* 红土：主按钮、品牌、选中态 */
+  --deep-teal: #1E4B48;    /* 深田青：主题大卡、同路卡 */
+  --paddy-teal: #2F7A78;   /* 水田青：答对、已完成、辅助 */
+  --gold: #D9A441;         /* 竹金：字牌、积分、强调按钮 */
+  --ink: #22201C;          /* 墨：正文 */
+  --stone: #6E6A63;        /* 石灰：次要文字 */
+  --paper: #F6F1E8;        /* 米纸：页面底色 */
+  --white: #FFFDF9;        /* 卡片底色 */
+  --safety: #D9622B;       /* 只用于安全与防火提示 */
+  --ruby: #B8323A;         /* 石榴籽 */
+  --membrane: #F3E6D3;     /* 石榴内膜、未点亮底色 */
+  --line: #E6DCCB;         /* 分割线、描边 */
+  --error: #C23B2E;        /* 表单校验错误（只用于文字） */
+
+  /* 字体 */
+  --serif: "HHSerif", "Noto Serif SC", "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", serif;
+  --sans: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", system-ui, sans-serif;
+
+  /* 字号（px，×2 即 rpx） */
+  --fs-h1: 26px; --fs-h2: 20px; --fs-h3: 17px; --fs-body: 15px; --fs-sub: 13px; --fs-cap: 12px;
+
+  /* 圆角 */
+  --r-card: 16px; --r-hero: 24px; --r-tile: 14px; --r-btn: 999px;
+
+  /* 阴影 */
+  --sh-card: 0 2px 8px rgba(34,32,28,.06);
+  --sh-pop: 0 -8px 30px rgba(34,32,28,.16);
+
+  /* 动效 */
+  --ease-zoom: cubic-bezier(.2,.8,.2,1);   /* 320ms 籽放大、面板 */
+  --ease-stamp: cubic-bezier(.3,1.4,.5,1); /* 450ms 盖章 */
+}
