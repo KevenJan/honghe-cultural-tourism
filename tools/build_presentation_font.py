@@ -28,7 +28,7 @@ def build_layout():
 
 
 def build_font():
-    files = [os.path.join(PRES, 'index.html')] + glob.glob(os.path.join(PRES, 'js/*.js'))
+    files = glob.glob(os.path.join(PRES, '*.html')) + glob.glob(os.path.join(PRES, 'js/*.js'))
     text = ''.join(open(p, encoding='utf-8').read() for p in files)
     opts = subset.Options()
     opts.flavor = 'woff2'
